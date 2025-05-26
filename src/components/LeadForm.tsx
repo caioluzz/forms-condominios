@@ -460,6 +460,13 @@ export function LeadForm() {
     window.scrollTo(0, 0);
   }, []);
 
+  const formatPhoneNumber = (phone: string): string => {
+    // Remove o 9 entre o DDD e o número
+    const phoneWithout9 = phone.replace(/^(\d{2})9(\d{8})$/, '$1$2');
+    // Adiciona o 55 no início
+    return `55${phoneWithout9}`;
+  };
+
   const onSubmit = async (data: FormValues) => {
     try {
       setIsSubmitting(true);
@@ -467,11 +474,46 @@ export function LeadForm() {
 
       const formData = new FormData();
 
+      // Extrair o primeiro nome usando regex
+      const firstName = data.name.split(/\s+/)[0];
+      
       Object.entries(data).forEach(([key, value]) => {
         if (value) {
-          formData.append(key, value);
+          // Formata o número de telefone se for o campo phone
+          if (key === 'phone') {
+            formData.append(key, formatPhoneNumber(value));
+          } else {
+            formData.append(key, value);
+          }
         }
       });
+
+      // Adicionar o primeiro nome ao formData
+      formData.append('firstName', firstName);
+
+      // Calcular os valores de economia
+      const consumo = parseFloat(data.consumo);
+      if (!isNaN(consumo)) {
+        // Valor com desconto (80% do valor original)
+        const valorComDesconto = Math.round(consumo * 0.8);
+        formData.append('valor_com_desconto', valorComDesconto.toString());
+
+        // Economia mensal (20% do valor original)
+        const economiaMensal = Math.round(consumo * 0.2);
+        formData.append('economia_mensal', economiaMensal.toString());
+
+        // Economia em 1 ano (economia mensal * 12)
+        const economiaAnual = Math.round(economiaMensal * 12);
+        formData.append('economia_1_ano', economiaAnual.toString());
+
+        // Economia em 3 anos (economia mensal * 36)
+        const economia3Anos = Math.round(economiaMensal * 36);
+        formData.append('economia_3_anos', economia3Anos.toString());
+
+        // Economia em 5 anos (economia mensal * 60)
+        const economia5Anos = Math.round(economiaMensal * 60);
+        formData.append('economia_5_anos', economia5Anos.toString());
+      }
 
       // Adicionando as informações do condomínio
       const condominioSelecionado = condominiosInfo[data.condominio];
