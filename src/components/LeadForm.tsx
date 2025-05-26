@@ -479,9 +479,10 @@ export function LeadForm() {
       
       Object.entries(data).forEach(([key, value]) => {
         if (value) {
-          // Formata o número de telefone se for o campo phone
+          // Para o campo phone, envia tanto o número original quanto o formatado
           if (key === 'phone') {
-            formData.append(key, formatPhoneNumber(value));
+            formData.append('phone', value); // número original com 9
+            formData.append('phone_formatted', formatPhoneNumber(value)); // número formatado sem 9 e com 55
           } else {
             formData.append(key, value);
           }
