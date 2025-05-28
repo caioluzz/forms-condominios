@@ -672,16 +672,12 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
                 <datalist id="condominios-list">
                   {condominios.map((condominio) => (
                     <option key={condominio} value={condominio} />
-                  ))}
-                </datalist>
-              </div>
               {form.formState.errors.condominio && (
                 <p className="text-xs md:text-sm text-red-500 animate-slide-up">
                   {form.formState.errors.condominio.message}
                 </p>
               )}
               <p className="text-xs text-gray-500">
-                Digite o nome do condomínio para filtrar a lista.
               </p>
             </div>
           )}
