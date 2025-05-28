@@ -16,7 +16,7 @@ const SuccessMessage: React.FC<SuccessMessageProps> = ({ estabelecimento }) => {
         Recebemos seus dados!
       </h2>
 
-      <p className="text-gray-600 dark:text-gray-300 text-center mb-6 max-w-sm text-balance">
+      <p className="text-gray-600 dark:text-gray-100 text-center mb-6 max-w-sm text-balance">
         Obrigado pelo seu interesse nas soluções da TR Energia. Nossa equipe entrará em contato em até 24 horas uteis com a proposta de economia na conta de energia.
       </p>
 
