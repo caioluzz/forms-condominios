@@ -534,6 +534,8 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
         }
       } else if (!showCondominio) {
         formData.append('origem', 'instagram');
+        formData.append('comercial', 'ADS');
+        formData.append('tipo', 'digital');
       }
 
       formData.append('data_cadastro', new Date().toISOString());
