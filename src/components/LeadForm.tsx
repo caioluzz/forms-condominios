@@ -534,7 +534,15 @@ export function LeadForm({ showCondominio = true, isAssociacao = false }: LeadFo
         formData.append('economia_5_anos', economia5Anos.toString());
       }
 
-      if ((showCondominio || isAssociacao) && data.condominio) {
+      // Lógica específica para Instagram
+      if (!showCondominio && !isAssociacao) {
+        formData.append('origem', 'instagram');
+        formData.append('comercial', 'ads');
+        formData.append('tipo', 'digital');
+        formData.append('tipo_cliente', 'instagram');
+      }
+      // Lógica para condomínios e associações
+      else if ((showCondominio || isAssociacao) && data.condominio) {
         const info = isAssociacao ? associacoesInfo[data.condominio] : condominiosInfo[data.condominio];
         if (info) {
           formData.append('origem', info.nome);
