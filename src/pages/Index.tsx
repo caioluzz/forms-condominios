@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import LeadForm from '@/components/LeadForm';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { useTheme } from "@/contexts/ThemeContext";
 import { Moon, Sun } from "lucide-react";
 
-interface IndexProps {
-  showCondominio?: boolean;
-}
-
-const Index = ({ showCondominio = true }: IndexProps) => {
+const Index = () => {
+  const location = useLocation();
+  const path = location.pathname;
   const [loaded, setLoaded] = useState(false);
   const isMobile = useIsMobile();
   const { isDarkMode, toggleDarkMode } = useTheme();
@@ -17,6 +16,10 @@ const Index = ({ showCondominio = true }: IndexProps) => {
   useEffect(() => {
     setLoaded(true);
   }, []);
+
+  // Determina se deve mostrar o campo de condomínio baseado na rota
+  const showCondominio = path !== '/instagram' && path !== '/associacoes';
+  const isAssociacao = path === '/associacoes';
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-trenergia-blue/10 to-trenergia-blue/30 px-4 py-8 md:py-12">
@@ -36,7 +39,7 @@ const Index = ({ showCondominio = true }: IndexProps) => {
           } ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
       >
-        <LeadForm showCondominio={showCondominio} />
+        <LeadForm showCondominio={showCondominio} isAssociacao={isAssociacao} />
       </div>
     </div>
   );

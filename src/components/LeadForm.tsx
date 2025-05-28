@@ -1,9 +1,9 @@
 import * as React from 'react';
-import { useState, useMemo, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { User, Mail, Phone, Zap, Building, Check, ChevronsUpDown, Moon, Sun } from 'lucide-react';
+import { User, Mail, Phone, Zap, Building, Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,22 +12,8 @@ import FormHeader from './FormHeader';
 import SuccessMessage from './SuccessMessage';
 import { useIsMobile } from '@/hooks/use-mobile';
 import { v4 as uuidv4 } from 'uuid';
-import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-} from "@/components/ui/command";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { useTheme } from "@/contexts/ThemeContext";
 
-// Interface para as informações do condomínio
+// Interface para as informações do condomínio/associação
 interface CondominioInfo {
   nome: string;
   comercial: string;
@@ -408,12 +394,61 @@ const condominiosInfo: Record<string, CondominioInfo> = {
   }
 };
 
-// Lista de condomínios para o select
-const condominios = Object.keys(condominiosInfo);
+// Mapeamento das associações
+const associacoesInfo: Record<string, CondominioInfo> = {
+  'Sindicado dos Servidores Municipais de Olinda - SISMO': {
+    nome: 'Sindicado dos Servidores Municipais de Olinda - SISMO',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'Associação Pernambucana dos Cabos e Soldados PM/BM - ACS': {
+    nome: 'Associação Pernambucana dos Cabos e Soldados PM/BM - ACS',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'Associação dos Servidores Municipais da Prefeitura do Recife - Aspcre': {
+    nome: 'Associação dos Servidores Municipais da Prefeitura do Recife - Aspcre',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'Sindicato dos Guardas Municipais do Recife - Sindiguardas': {
+    nome: 'Sindicato dos Guardas Municipais do Recife - Sindiguardas',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'União dos Vereadores do Estado de Pernambuco - UVP': {
+    nome: 'União dos Vereadores do Estado de Pernambuco - UVP',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'Sindicato dos Servidores do Tribunal de Contas do Estado de Pernambuco - Sindicontas': {
+    nome: 'Sindicato dos Servidores do Tribunal de Contas do Estado de Pernambuco - Sindicontas',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  }
+};
 
-interface LeadFormProps {
-  showCondominio?: boolean;
-}
+// Lista de condomínios e associações para o select
+const condominios = Object.keys(condominiosInfo);
+const associacoes = Object.keys(associacoesInfo);
+
+const formSchema = (showCondominio: boolean, isAssociacao: boolean) => z.object({
+  name: z.string()
+    .min(3, { message: "Nome deve ter pelo menos 3 caracteres" })
+    .max(100, { message: "Nome muito longo" }),
+  email: z.string()
+    .email({ message: "E-mail inválido" }),
+  phone: z.string()
+    .min(10, { message: "Telefone deve ter pelo menos 10 dígitos (com DDD)" })
+    .max(15, { message: "Número de telefone muito longo" })
+    .regex(/^[0-9]+$/, { message: "Telefone deve conter apenas números" }),
+  consumo: z.string()
+    .min(1, { message: "Por favor, informe o consumo" })
+    .regex(/^\d+$/, { message: "O consumo deve conter apenas números" }),
+  condominio: (showCondominio || isAssociacao)
+    ? z.string().min(1, { message: "Por favor, selecione uma opção" })
+    : z.string().optional()
+});
 
 interface FormValues {
   name: string;
@@ -423,44 +458,30 @@ interface FormValues {
   condominio?: string;
 }
 
-export function LeadForm({ showCondominio = true }: LeadFormProps) {
+interface LeadFormProps {
+  showCondominio?: boolean;
+  isAssociacao?: boolean;
+}
+
+export function LeadForm({ showCondominio = true, isAssociacao = false }: LeadFormProps) {
   console.log('Ambiente:', import.meta.env.MODE);
   console.log('Webhook URL:', import.meta.env.VITE_WEBHOOK_URL);
+  console.log('Tipo de Formulário:', isAssociacao ? 'Associação' : (showCondominio ? 'Condomínio' : 'Instagram'));
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submissionId, setSubmissionId] = useState<string>(uuidv4());
   const isMobile = useIsMobile();
-  const { isDarkMode, toggleDarkMode } = useTheme();
-
-  const formSchema = z.object({
-    name: z.string()
-      .min(3, { message: "Nome deve ter pelo menos 3 caracteres" })
-      .max(100, { message: "Nome muito longo" }),
-    email: z.string()
-      .email({ message: "E-mail inválido" }),
-    phone: z.string()
-      .min(10, { message: "Telefone deve ter pelo menos 10 dígitos (com DDD)" })
-      .max(15, { message: "Número de telefone muito longo" })
-      .regex(/^[0-9]+$/, { message: "Telefone deve conter apenas números" }),
-    consumo: z.string()
-      .min(1, { message: "Por favor, informe o consumo" })
-      .regex(/^\d+$/, { message: "O consumo deve conter apenas números" }),
-    ...(showCondominio ? {
-      condominio: z.string()
-        .min(1, { message: "Por favor, selecione um condomínio" })
-    } : {})
-  });
 
   const form = useForm<FormValues>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema(showCondominio, isAssociacao)),
     defaultValues: {
       name: '',
       email: '',
       phone: '',
       consumo: '',
-      ...(showCondominio ? { condominio: '' } : {})
+      condominio: ''
     }
   });
 
@@ -469,9 +490,7 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
   }, []);
 
   const formatPhoneNumber = (phone: string): string => {
-    // Remove o 9 entre o DDD e o número
     const phoneWithout9 = phone.replace(/^(\d{2})9(\d{8})$/, '$1$2');
-    // Adiciona o 55 no início
     return `55${phoneWithout9}`;
   };
 
@@ -482,60 +501,47 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
 
       const formData = new FormData();
 
-      // Extrair o primeiro nome usando regex
       const firstName = data.name.split(/\s+/)[0];
       
       Object.entries(data).forEach(([key, value]) => {
         if (value) {
-          // Para o campo phone, envia tanto o número original quanto o formatado
           if (key === 'phone') {
-            formData.append('phone', value); // número original com 9
-            formData.append('phone_formatted', formatPhoneNumber(value)); // número formatado sem 9 e com 55
+            formData.append('phone', value);
+            formData.append('phone_formatted', formatPhoneNumber(value));
           } else {
             formData.append(key, value);
           }
         }
       });
 
-      // Adicionar o primeiro nome ao formData
       formData.append('firstName', firstName);
 
-      // Calcular os valores de economia
       const consumo = parseFloat(data.consumo);
       if (!isNaN(consumo)) {
-        // Valor com desconto (80% do valor original)
         const valorComDesconto = Math.round(consumo * 0.8);
         formData.append('valor_com_desconto', valorComDesconto.toString());
 
-        // Economia mensal (20% do valor original)
         const economiaMensal = Math.round(consumo * 0.2);
         formData.append('economia_mensal', economiaMensal.toString());
 
-        // Economia em 1 ano (economia mensal * 12)
         const economiaAnual = Math.round(economiaMensal * 12);
         formData.append('economia_1_ano', economiaAnual.toString());
 
-        // Economia em 3 anos (economia mensal * 36)
         const economia3Anos = Math.round(economiaMensal * 36);
         formData.append('economia_3_anos', economia3Anos.toString());
 
-        // Economia em 5 anos (economia mensal * 60)
         const economia5Anos = Math.round(economiaMensal * 60);
         formData.append('economia_5_anos', economia5Anos.toString());
       }
 
-      // Adicionando as informações do condomínio
-      if (showCondominio && data.condominio) {
-        const condominioSelecionado = condominiosInfo[data.condominio];
-        if (condominioSelecionado) {
-          formData.append('origem', condominioSelecionado.nome);
-          formData.append('comercial', condominioSelecionado.comercial);
-          formData.append('tipo', condominioSelecionado.tipo);
+      if ((showCondominio || isAssociacao) && data.condominio) {
+        const info = isAssociacao ? associacoesInfo[data.condominio] : condominiosInfo[data.condominio];
+        if (info) {
+          formData.append('origem', info.nome);
+          formData.append('comercial', info.comercial);
+          formData.append('tipo', info.tipo);
+          formData.append('tipo_cliente', isAssociacao ? 'associacao' : 'condominio');
         }
-      } else if (!showCondominio) {
-        formData.append('origem', 'instagram');
-        formData.append('comercial', 'ADS');
-        formData.append('tipo', 'digital');
       }
 
       formData.append('data_cadastro', new Date().toISOString());
@@ -546,7 +552,12 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
       const timeoutId = setTimeout(() => controller.abort(), 30000);
 
       const webhookUrl = import.meta.env.VITE_WEBHOOK_URL;
-      console.log('Webhook URL:', webhookUrl);
+      console.log('Enviando formulário para:', webhookUrl);
+      console.log('Dados do formulário:', {
+        tipo: isAssociacao ? 'associacao' : (showCondominio ? 'condominio' : 'instagram'),
+        origem: data.condominio,
+        submissionId
+      });
 
       if (!webhookUrl) {
         console.error('URL do webhook não configurada');
@@ -636,7 +647,6 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
     if (e.key === 'Enter') {
       e.preventDefault();
       e.stopPropagation();
-      // Apenas valida o campo atual sem submeter o formulário
       const fieldName = e.currentTarget.name as keyof FormValues;
       form.trigger(fieldName);
     }
@@ -652,32 +662,36 @@ export function LeadForm({ showCondominio = true }: LeadFormProps) {
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
         <div className="space-y-3 md:space-y-4">
-          {showCondominio && (
+          {(showCondominio || isAssociacao) && (
             <div className="space-y-1 md:space-y-2">
               <Label htmlFor="condominio" className="flex items-center text-sm md:text-base">
                 <Building className="w-4 h-4 mr-2 text-trenergia-blue" />
-                Condomínio
+                {isAssociacao ? 'Associação' : 'Condomínio'}
               </Label>
               <div className="relative">
                 <Input
                   type="text"
                   id="condominio"
-                  placeholder="Digite o nome do condomínio..."
+                  placeholder={isAssociacao ? "Digite o nome da associação..." : "Digite o nome do condomínio..."}
                   className="w-full h-9 md:h-10"
                   {...form.register("condominio")}
                   onKeyDown={handleKeyDown}
-                  list="condominios-list"
+                  list={isAssociacao ? "associacoes-list" : "condominios-list"}
                   autoComplete="off"
                 />
-                <datalist id="condominios-list">
-                  {condominios.map((condominio) => (
-                    <option key={condominio} value={condominio} />
+                <datalist id={isAssociacao ? "associacoes-list" : "condominios-list"}>
+                  {(isAssociacao ? associacoes : condominios).map((item) => (
+                    <option key={item} value={item} />
+                  ))}
+                </datalist>
+              </div>
               {form.formState.errors.condominio && (
                 <p className="text-xs md:text-sm text-red-500 animate-slide-up">
                   {form.formState.errors.condominio.message}
                 </p>
               )}
               <p className="text-xs text-gray-500">
+                Digite o nome {isAssociacao ? 'da associação' : 'do condomínio'} para filtrar a lista.
               </p>
             </div>
           )}
