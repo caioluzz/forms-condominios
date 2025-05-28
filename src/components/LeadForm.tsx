@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from 'react';
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { User, Mail, Phone, Zap, Building, Check, ChevronsUpDown } from 'lucide-react';
+import { User, Mail, Phone, Zap, Building, Check, ChevronsUpDown, Moon, Sun } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -25,6 +25,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
+import { useTheme } from "@/contexts/ThemeContext";
 
 // Interface para as informações do condomínio
 interface CondominioInfo {
@@ -410,32 +411,19 @@ const condominiosInfo: Record<string, CondominioInfo> = {
 // Lista de condomínios para o select
 const condominios = Object.keys(condominiosInfo);
 
-const formSchema = z.object({
-  name: z.string()
-    .min(3, { message: "Nome deve ter pelo menos 3 caracteres" })
-    .max(100, { message: "Nome muito longo" }),
-  email: z.string()
-    .email({ message: "E-mail inválido" }),
-  phone: z.string()
-    .min(10, { message: "Telefone deve ter pelo menos 10 dígitos (com DDD)" })
-    .max(15, { message: "Número de telefone muito longo" })
-    .regex(/^[0-9]+$/, { message: "Telefone deve conter apenas números" }),
-  consumo: z.string()
-    .min(1, { message: "Por favor, informe o consumo" })
-    .regex(/^\d+$/, { message: "O consumo deve conter apenas números" }),
-  condominio: z.string()
-    .min(1, { message: "Por favor, selecione um condomínio" })
-});
+interface LeadFormProps {
+  showCondominio?: boolean;
+}
 
 interface FormValues {
   name: string;
   email: string;
   phone: string;
   consumo: string;
-  condominio: string;
+  condominio?: string;
 }
 
-export function LeadForm() {
+export function LeadForm({ showCondominio = true }: LeadFormProps) {
   console.log('Ambiente:', import.meta.env.MODE);
   console.log('Webhook URL:', import.meta.env.VITE_WEBHOOK_URL);
 
@@ -444,6 +432,26 @@ export function LeadForm() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [submissionId, setSubmissionId] = useState<string>(uuidv4());
   const isMobile = useIsMobile();
+  const { isDarkMode, toggleDarkMode } = useTheme();
+
+  const formSchema = z.object({
+    name: z.string()
+      .min(3, { message: "Nome deve ter pelo menos 3 caracteres" })
+      .max(100, { message: "Nome muito longo" }),
+    email: z.string()
+      .email({ message: "E-mail inválido" }),
+    phone: z.string()
+      .min(10, { message: "Telefone deve ter pelo menos 10 dígitos (com DDD)" })
+      .max(15, { message: "Número de telefone muito longo" })
+      .regex(/^[0-9]+$/, { message: "Telefone deve conter apenas números" }),
+    consumo: z.string()
+      .min(1, { message: "Por favor, informe o consumo" })
+      .regex(/^\d+$/, { message: "O consumo deve conter apenas números" }),
+    ...(showCondominio ? {
+      condominio: z.string()
+        .min(1, { message: "Por favor, selecione um condomínio" })
+    } : {})
+  });
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -452,7 +460,7 @@ export function LeadForm() {
       email: '',
       phone: '',
       consumo: '',
-      condominio: ''
+      ...(showCondominio ? { condominio: '' } : {})
     }
   });
 
@@ -517,11 +525,15 @@ export function LeadForm() {
       }
 
       // Adicionando as informações do condomínio
-      const condominioSelecionado = condominiosInfo[data.condominio];
-      if (condominioSelecionado) {
-        formData.append('origem', condominioSelecionado.nome);
-        formData.append('comercial', condominioSelecionado.comercial);
-        formData.append('tipo', condominioSelecionado.tipo);
+      if (showCondominio && data.condominio) {
+        const condominioSelecionado = condominiosInfo[data.condominio];
+        if (condominioSelecionado) {
+          formData.append('origem', condominioSelecionado.nome);
+          formData.append('comercial', condominioSelecionado.comercial);
+          formData.append('tipo', condominioSelecionado.tipo);
+        }
+      } else if (!showCondominio) {
+        formData.append('origem', 'instagram');
       }
 
       formData.append('data_cadastro', new Date().toISOString());
@@ -638,37 +650,39 @@ export function LeadForm() {
 
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
         <div className="space-y-3 md:space-y-4">
-          <div className="space-y-1 md:space-y-2">
-            <Label htmlFor="condominio" className="flex items-center text-sm md:text-base">
-              <Building className="w-4 h-4 mr-2 text-trenergia-blue" />
-              Condomínio
-            </Label>
-            <div className="relative">
-              <Input
-                type="text"
-                id="condominio"
-                placeholder="Digite o nome do condomínio..."
-                className="w-full h-9 md:h-10"
-                {...form.register("condominio")}
-                onKeyDown={handleKeyDown}
-                list="condominios-list"
-                autoComplete="off"
-              />
-              <datalist id="condominios-list">
-                {condominios.map((condominio) => (
-                  <option key={condominio} value={condominio} />
-                ))}
-              </datalist>
-            </div>
-            {form.formState.errors.condominio && (
-              <p className="text-xs md:text-sm text-red-500 animate-slide-up">
-                {form.formState.errors.condominio.message}
+          {showCondominio && (
+            <div className="space-y-1 md:space-y-2">
+              <Label htmlFor="condominio" className="flex items-center text-sm md:text-base">
+                <Building className="w-4 h-4 mr-2 text-trenergia-blue" />
+                Condomínio
+              </Label>
+              <div className="relative">
+                <Input
+                  type="text"
+                  id="condominio"
+                  placeholder="Digite o nome do condomínio..."
+                  className="w-full h-9 md:h-10"
+                  {...form.register("condominio")}
+                  onKeyDown={handleKeyDown}
+                  list="condominios-list"
+                  autoComplete="off"
+                />
+                <datalist id="condominios-list">
+                  {condominios.map((condominio) => (
+                    <option key={condominio} value={condominio} />
+                  ))}
+                </datalist>
+              </div>
+              {form.formState.errors.condominio && (
+                <p className="text-xs md:text-sm text-red-500 animate-slide-up">
+                  {form.formState.errors.condominio.message}
+                </p>
+              )}
+              <p className="text-xs text-gray-500">
+                Digite o nome do condomínio para filtrar a lista.
               </p>
-            )}
-            <p className="text-xs text-gray-500">
-              Digite o nome do condomínio para filtrar a lista.
-            </p>
-          </div>
+            </div>
+          )}
 
           <div className="space-y-1 md:space-y-2">
             <Label htmlFor="name" className="flex items-center text-sm md:text-base">
