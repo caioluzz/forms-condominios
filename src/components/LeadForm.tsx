@@ -92,7 +92,7 @@ const condominiosInfo: Record<string, CondominioInfo> = {
     comercial: 'AMANDA',
     tipo: 'interno'
   },
-  'CONDOMINIO EDIFICO CASA GRANDE DAS UBAIAS': {
+  'CONDOMINIO EDIFICIO CASA GRANDE DAS UBAIAS': {
     nome: 'CONDOMINIO EDIFICO CASA GRANDE DAS UBAIAS',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
