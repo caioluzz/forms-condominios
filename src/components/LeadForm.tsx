@@ -7,6 +7,13 @@ import { User, Mail, Phone, Zap, Building, Check } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { toast } from "sonner";
 import FormHeader from './FormHeader';
 import SuccessMessage from './SuccessMessage';
@@ -391,6 +398,11 @@ const condominiosInfo: Record<string, CondominioInfo> = {
     nome: 'EDF. JARDIM BEIRA RIO',
     comercial: 'TR DIRETORIA',
     tipo: 'interno'
+  },
+  'EDF. IPUTINGA RESIDENCE': {
+    nome: 'EDF. IPUTINGA RESIDENCE',
+    comercial: 'Silmar',
+    tipo: 'externo'
   }
 };
 
@@ -676,30 +688,28 @@ export function LeadForm({ showCondominio = true, isAssociacao = false }: LeadFo
                 <Building className="w-4 h-4 mr-2 text-trenergia-blue" />
                 {isAssociacao ? 'Associação' : 'Condomínio'}
               </Label>
-              <div className="relative">
-                <Input
-                  type="text"
-                  id="condominio"
-                  placeholder={isAssociacao ? "Digite o nome da associação..." : "Digite o nome do condomínio..."}
-                  className="w-full h-9 md:h-10"
-                  {...form.register("condominio")}
-                  onKeyDown={handleKeyDown}
-                  list={isAssociacao ? "associacoes-list" : "condominios-list"}
-                  autoComplete="off"
-                />
-                <datalist id={isAssociacao ? "associacoes-list" : "condominios-list"}>
+              <Select
+                onValueChange={(value) => form.setValue("condominio", value)}
+                value={form.watch("condominio")}
+              >
+                <SelectTrigger className="w-full h-9 md:h-10">
+                  <SelectValue placeholder={isAssociacao ? "Selecione uma associação..." : "Selecione um condomínio..."} />
+                </SelectTrigger>
+                <SelectContent>
                   {(isAssociacao ? associacoes : condominios).map((item) => (
-                    <option key={item} value={item} />
+                    <SelectItem key={item} value={item}>
+                      {item}
+                    </SelectItem>
                   ))}
-                </datalist>
-              </div>
+                </SelectContent>
+              </Select>
               {form.formState.errors.condominio && (
                 <p className="text-xs md:text-sm text-red-500 animate-slide-up">
                   {form.formState.errors.condominio.message}
                 </p>
               )}
               <p className="text-xs text-gray-500">
-                Digite o nome {isAssociacao ? 'da associação' : 'do condomínio'} para filtrar a lista.
+                Selecione {isAssociacao ? 'a associação' : 'o condomínio'} da lista.
               </p>
             </div>
           )}
