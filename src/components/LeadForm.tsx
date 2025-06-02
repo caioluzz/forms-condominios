@@ -22,373 +22,373 @@ interface CondominioInfo {
 
 // Mapeamento dos condomínios com suas informações
 const condominiosInfo: Record<string, CondominioInfo> = {
-  'CONDOMINIO DO EDIFICIO LUCIANO COSTA': {
-    nome: 'CONDOMINIO DO EDIFICIO LUCIANO COSTA',
+  'EDF. LUCIANO COSTA': {
+    nome: 'EDF. LUCIANO COSTA',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO LOFT CASA FORTE': {
-    nome: 'CONDOMINIO DO EDIFICIO LOFT CASA FORTE',
+  'EDF. LOFT CASA FORTE': {
+    nome: 'EDF. LOFT CASA FORTE',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO COSTA AZUL': {
-    nome: 'CONDOMINIO DO EDIFICIO COSTA AZUL',
+  'EDF. COSTA AZUL': {
+    nome: 'EDF. COSTA AZUL',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO CONJUNTO RESIDENCIAL IGNEZ ANDREAZZA': {
-    nome: 'CONDOMINIO DO CONJUNTO RESIDENCIAL IGNEZ ANDREAZZA',
+  'COND. CONJUNTO RESIDENCIAL IGNEZ ANDREAZZA': {
+    nome: 'COND. CONJUNTO RESIDENCIAL IGNEZ ANDREAZZA',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO GIRASSOIS': {
-    nome: 'CONDOMINIO DO EDIFICIO GIRASSOIS',
+  'EDF. GIRASSOIS': {
+    nome: 'EDF. GIRASSOIS',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMÍNIO DO EDIFÍCIO PARC DE LOIRE': {
-    nome: 'CONDOMÍNIO DO EDIFÍCIO PARC DE LOIRE',
+  'EDF. PARC DE LOIRE': {
+    nome: 'EDF. PARC DE LOIRE',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFÍCIO QUATRO ESTAÇÃO': {
-    nome: 'CONDOMINIO DO EDIFÍCIO QUATRO ESTAÇÃO',
+  'EDF. QUATRO ESTAÇÃO': {
+    nome: 'EDF. QUATRO ESTAÇÃO',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO JOHN LENNON': {
-    nome: 'CONDOMINIO DO EDIFICIO JOHN LENNON',
+  'EDF. JOHN LENNON': {
+    nome: 'EDF. JOHN LENNON',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO LIVERPOOL': {
-    nome: 'CONDOMINIO DO EDIFICIO LIVERPOOL',
+  'EDF. LIVERPOOL': {
+    nome: 'EDF. LIVERPOOL',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMÍNIO DO EDF. BRUXELAS': {
-    nome: 'CONDOMÍNIO DO EDF. BRUXELAS',
+  'EDF. BRUXELAS': {
+    nome: 'EDF. BRUXELAS',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO SÃO SALVADOR': {
-    nome: 'CONDOMINIO DO EDIFICIO SÃO SALVADOR',
+  'EDF. SÃO SALVADOR': {
+    nome: 'EDF. SÃO SALVADOR',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO AVIGNON': {
-    nome: 'CONDOMINIO DO EDIFICIO AVIGNON',
+  'EDF. AVIGNON': {
+    nome: 'EDF. AVIGNON',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO PARK FLEMING': {
-    nome: 'CONDOMINIO DO EDIFICIO PARK FLEMING',
+  'EDF. PARK FLEMING': {
+    nome: 'EDF. PARK FLEMING',
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDF. PORTE ORLEANS': {
-    nome: 'CONDOMINIO DO EDF. PORTE ORLEANS',
+  'EDF. PORTE ORLEANS': {
+    nome: 'EDF. PORTE ORLEANS',
     comercial: 'AMANDA',
     tipo: 'interno'
   },
-  'CONDOMINIO EDIFICIO CASA GRANDE DAS UBAIAS': {
-    nome: 'CONDOMINIO EDIFICO CASA GRANDE DAS UBAIAS',
+  'EDF. CASA GRANDE DAS UBAIAS': {
+    nome: 'EDF. CASA GRANDE DAS UBAIAS',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMÍNIO DO EDIFÍCIO ROYAL EMBASSY': {
-    nome: 'CONDOMÍNIO DO EDIFÍCIO ROYAL EMBASSY',
+  'EDF. ROYAL EMBASSY': {
+    nome: 'EDF. ROYAL EMBASSY',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO FIRST S VILLAGE': {
-    nome: 'CONDOMINIO DO EDIFICIO FIRST S VILLAGE',
+  'EDF. FIRST S VILLAGE': {
+    nome: 'EDF. FIRST S VILLAGE',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO ATLANTA': {
-    nome: 'CONDOMINIO DO EDIFICIO ATLANTA',
+  'EDF. ATLANTA': {
+    nome: 'EDF. ATLANTA',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO MAISON CLASSIC': {
-    nome: 'CONDOMINIO DO EDIFICIO MAISON CLASSIC',
+  'EDF. MAISON CLASSIC': {
+    nome: 'EDF. MAISON CLASSIC',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO VEREDA DO MAR': {
-    nome: 'CONDOMINIO DO EDIFICIO VEREDA DO MAR',
+  'EDF. VEREDA DO MAR': {
+    nome: 'EDF. VEREDA DO MAR',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO RESIDENCIAL LINCOLN AVENIDA': {
-    nome: 'CONDOMINIO DO EDIFICIO RESIDENCIAL LINCOLN AVENIDA',
+  'EDF. RESIDENCIAL LINCOLN AVENIDA': {
+    nome: 'EDF. RESIDENCIAL LINCOLN AVENIDA',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO MONTE DOS GUARARAPES': {
-    nome: 'CONDOMINIO DO EDIFICIO MONTE DOS GUARARAPES',
+  'EDF. MONTE DOS GUARARAPES': {
+    nome: 'EDF. MONTE DOS GUARARAPES',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO ALGARVE': {
-    nome: 'CONDOMINIO DO EDIFICIO ALGARVE',
+  'EDF. ALGARVE': {
+    nome: 'EDF. ALGARVE',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO COSTA DO SOL': {
-    nome: 'CONDOMINIO DO EDIFICIO COSTA DO SOL',
+  'EDF. COSTA DO SOL': {
+    nome: 'EDF. COSTA DO SOL',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO EMILIA LOPES': {
-    nome: 'CONDOMINIO DO EDIFICIO EMILIA LOPES',
+  'EDF. EMILIA LOPES': {
+    nome: 'EDF. EMILIA LOPES',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO CARLA DIAS': {
-    nome: 'CONDOMINIO DO EDIFICIO CARLA DIAS',
+  'EDF. CARLA DIAS': {
+    nome: 'EDF. CARLA DIAS',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO COSTA DAS PALMEIRAS': {
-    nome: 'CONDOMINIO DO EDIFICIO COSTA DAS PALMEIRAS',
+  'EDF. COSTA DAS PALMEIRAS': {
+    nome: 'EDF. COSTA DAS PALMEIRAS',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO RESIDENCIAL FERREIRA LOPES': {
-    nome: 'CONDOMINIO RESIDENCIAL FERREIRA LOPES',
+  'COND. RESIDENCIAL FERREIRA LOPES': {
+    nome: 'COND. RESIDENCIAL FERREIRA LOPES',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO EDIFICIO LULA CARDOSO AYRES': {
-    nome: 'CONDOMINIO EDIFICIO LULA CARDOSO AYRES',
+  'EDF. LULA CARDOSO AYRES': {
+    nome: 'EDF. LULA CARDOSO AYRES',
     comercial: 'ANDRE FAUSTO',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO ESPANHA': {
-    nome: 'CONDOMINIO DO EDIFICIO ESPANHA',
+  'EDF. ESPANHA': {
+    nome: 'EDF. ESPANHA',
     comercial: 'CAMILLA',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO GOLDEN LAKE': {
-    nome: 'CONDOMINIO DO EDIFICIO GOLDEN LAKE',
+  'EDF. GOLDEN LAKE': {
+    nome: 'EDF. GOLDEN LAKE',
     comercial: 'CAMILLA',
     tipo: 'externo'
   },
-  'CONDOMINIO DO PRIVE TROPICALIENTE': {
-    nome: 'CONDOMINIO DO PRIVE TROPICALIENTE',
+  'COND. PRIVE TROPICALIENTE': {
+    nome: 'COND. PRIVE TROPICALIENTE',
     comercial: 'CRISTIANE',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO UBAIAS PRINCE': {
-    nome: 'CONDOMINIO DO EDIFICIO UBAIAS PRINCE',
+  'EDF. UBAIAS PRINCE': {
+    nome: 'EDF. UBAIAS PRINCE',
     comercial: 'DANILO TR',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO PORTAL DO CAPIBARIBE': {
-    nome: 'CONDOMINIO DO EDIFICIO PORTAL DO CAPIBARIBE',
+  'EDF. PORTAL DO CAPIBARIBE': {
+    nome: 'EDF. PORTAL DO CAPIBARIBE',
     comercial: 'EDUARDO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EMPRESARIAL GABRIEL BACELAR CORPORATE': {
-    nome: 'CONDOMINIO DO EMPRESARIAL GABRIEL BACELAR CORPORATE',
+  'COND. EMPRESARIAL GABRIEL BACELAR CORPORATE': {
+    nome: 'COND. EMPRESARIAL GABRIEL BACELAR CORPORATE',
     comercial: 'EDUARDO RIBEIRO',
     tipo: 'externo'
   },
-  'CONDOMÍNIO DO EDIFÍCIO ACROPOLE': {
-    nome: 'CONDOMÍNIO DO EDIFÍCIO ACROPOLE',
+  'EDF. ACROPOLE': {
+    nome: 'EDF. ACROPOLE',
     comercial: 'EDUARDO RIBEIRO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO MASTER ESPINHEIRO': {
-    nome: 'CONDOMINIO DO EDIFICIO MASTER ESPINHEIRO',
+  'EDF. MASTER ESPINHEIRO': {
+    nome: 'EDF. MASTER ESPINHEIRO',
     comercial: 'EMMANUEL KROMA',
     tipo: 'externo'
   },
-  'CONDOMINIO PIRES FERREIRA': {
-    nome: 'CONDOMINIO PIRES FERREIRA',
+  'COND. PIRES FERREIRA': {
+    nome: 'COND. PIRES FERREIRA',
     comercial: 'FERNANDA TR',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO CASTELO B. RENDA': {
-    nome: 'CONDOMINIO DO EDIFICIO CASTELO B. RENDA',
+  'EDF. CASTELO B. RENDA': {
+    nome: 'EDF. CASTELO B. RENDA',
     comercial: 'FERNANDA TR',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF. OCAPORÃ': {
-    nome: 'CONDOMINIO EDF. OCAPORÃ',
+  'EDF. OCAPORÃ': {
+    nome: 'EDF. OCAPORÃ',
     comercial: 'FERNANDO A F NETO',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF SAN GERMINIANO': {
-    nome: 'CONDOMINIO EDF SAN GERMINIANO',
+  'EDF. SAN GERMINIANO': {
+    nome: 'EDF. SAN GERMINIANO',
     comercial: 'FOFAO',
     tipo: 'externo'
   },
-  'CONDOMÍNIO RESIDENCIAL VIA BRECIA': {
-    nome: 'CONDOMÍNIO RESIDENCIAL VIA BRECIA',
+  'COND. RESIDENCIAL VIA BRECIA': {
+    nome: 'COND. RESIDENCIAL VIA BRECIA',
     comercial: 'FOFAO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO ADOLPHO PEREIRA CARNEIRO': {
-    nome: 'CONDOMINIO DO EDIFICIO ADOLPHO PEREIRA CARNEIRO',
+  'EDF. ADOLPHO PEREIRA CARNEIRO': {
+    nome: 'EDF. ADOLPHO PEREIRA CARNEIRO',
     comercial: 'GUSTAVO',
     tipo: 'interno'
   },
-  'CONDOMINIO RESERVA DO POCO': {
-    nome: 'CONDOMINIO RESERVA DO POCO',
+  'COND. RESERVA DO POCO': {
+    nome: 'COND. RESERVA DO POCO',
     comercial: 'GUSTAVO TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO DUNE': {
-    nome: 'CONDOMINIO DO EDIFICIO DUNE',
+  'EDF. DUNE': {
+    nome: 'EDF. DUNE',
     comercial: 'GUSTAVO TR',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO MARIA SOPHIE': {
-    nome: 'CONDOMINIO DO EDIFICIO MARIA SOPHIE',
+  'EDF. MARIA SOPHIE': {
+    nome: 'EDF. MARIA SOPHIE',
     comercial: 'GUSTAVO TR',
     tipo: 'interno'
   },
-  'CONDOMINIO CONJ RESD RIO ARAUA': {
-    nome: 'CONDOMINIO CONJ RESD RIO ARAUA',
+  'COND. CONJ RESD RIO ARAUA': {
+    nome: 'COND. CONJ RESD RIO ARAUA',
     comercial: 'GUSTAVO TR',
     tipo: 'interno'
   },
-  'CONDOMÍNIO MORADA DO SOL': {
-    nome: 'CONDOMÍNIO MORADA DO SOL',
+  'COND. MORADA DO SOL': {
+    nome: 'COND. MORADA DO SOL',
     comercial: 'HELMO',
     tipo: 'externo'
   },
-  'CONDOMÍNIO DO EDF SALOMAO KELNER': {
-    nome: 'CONDOMÍNIO DO EDF SALOMAO KELNER',
+  'EDF. SALOMAO KELNER': {
+    nome: 'EDF. SALOMAO KELNER',
     comercial: 'HELMO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO BOULEVARD RESIDENCIAL JOSE NORONHA': {
-    nome: 'CONDOMINIO DO EDIFICIO BOULEVARD RESIDENCIAL JOSE NORONHA',
+  'EDF. BOULEVARD RESIDENCIAL JOSE NORONHA': {
+    nome: 'EDF. BOULEVARD RESIDENCIAL JOSE NORONHA',
     comercial: 'IRANILDO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO LITORAL': {
-    nome: 'CONDOMINIO DO EDIFICIO LITORAL',
+  'EDF. LITORAL': {
+    nome: 'EDF. LITORAL',
     comercial: 'IRANILDO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO MARIA DO CARMO ALVES': {
-    nome: 'CONDOMINIO DO EDIFICIO MARIA DO CARMO ALVES',
+  'EDF. MARIA DO CARMO ALVES': {
+    nome: 'EDF. MARIA DO CARMO ALVES',
     comercial: 'JOÃO MATHEUS',
     tipo: 'externo'
   },
-  'CONDOMÍNIO DO EDIFÍCIO ALBUQUERQUE MOREIRA': {
-    nome: 'CONDOMÍNIO DO EDIFÍCIO ALBUQUERQUE MOREIRA',
+  'EDF. ALBUQUERQUE MOREIRA': {
+    nome: 'EDF. ALBUQUERQUE MOREIRA',
     comercial: 'JOSÉ CARLOS (JULIO)',
     tipo: 'externo'
   },
-  'CONDOMINIO DOS EDIFICIOS AVA GARDNER E SOPHIE LOREN': {
-    nome: 'CONDOMINIO DOS EDIFICIOS AVA GARDNER E SOPHIE LOREN',
+  'EDF. AVA GARDNER E SOPHIE LOREN': {
+    nome: 'EDF. AVA GARDNER E SOPHIE LOREN',
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  'CONDOMINIO EDF. PALMVILLAGE': {
-    nome: 'CONDOMINIO EDF. PALMVILLAGE',
+  'EDF. PALMVILLAGE': {
+    nome: 'EDF. PALMVILLAGE',
     comercial: 'JULIO PARIZIO',
     tipo: 'interno'
   },
-  'CONDOMINIO EDF OPERA CLASSIC': {
-    nome: 'CONDOMINIO EDF OPERA CLASSIC',
+  'EDF. OPERA CLASSIC': {
+    nome: 'EDF. OPERA CLASSIC',
     comercial: 'JULIO PARIZIO',
     tipo: 'interno'
   },
-  'CONDOMINIO EDF RIO BRANCO': {
-    nome: 'CONDOMINIO EDF RIO BRANCO',
+  'EDF. RIO BRANCO': {
+    nome: 'EDF. RIO BRANCO',
     comercial: 'JULIO PARIZIO',
     tipo: 'interno'
   },
-  'CONDOMINIO EDF ILHA DO RETIRO': {
-    nome: 'CONDOMINIO EDF ILHA DO RETIRO',
+  'EDF. ILHA DO RETIRO': {
+    nome: 'EDF. ILHA DO RETIRO',
     comercial: 'LUIS GENIS',
     tipo: 'interno'
   },
-  'CONDOMINIO EDF. JARDIM BELA VISTA': {
-    nome: 'CONDOMINIO EDF. JARDIM BELA VISTA',
+  'EDF. JARDIM BELA VISTA': {
+    nome: 'EDF. JARDIM BELA VISTA',
     comercial: 'LUIS GENIS',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO PRAIA DE ITAOCA': {
-    nome: 'CONDOMINIO DO EDIFICIO PRAIA DE ITAOCA',
+  'EDF. PRAIA DE ITAOCA': {
+    nome: 'EDF. PRAIA DE ITAOCA',
     comercial: 'LUIS GENIS',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFÍCIO MUNIQUE': {
-    nome: 'CONDOMINIO DO EDIFÍCIO MUNIQUE',
+  'EDF. MUNIQUE': {
+    nome: 'EDF. MUNIQUE',
     comercial: 'MARKETING KROMA',
     tipo: 'externo'
   },
-  'CONDOMINO EDF THAIS DIAS': {
-    nome: 'CONDOMINO EDF THAIS DIAS',
+  'EDF. THAIS DIAS': {
+    nome: 'EDF. THAIS DIAS',
     comercial: 'OSCAR SETTA',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF MARIA DIVA': {
-    nome: 'CONDOMINIO EDF MARIA DIVA',
+  'EDF. MARIA DIVA': {
+    nome: 'EDF. MARIA DIVA',
     comercial: 'PAULO LUCATELLI',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF DOMINGOS DE CASTRO': {
-    nome: 'CONDOMINIO EDF DOMINGOS DE CASTRO',
+  'EDF. DOMINGOS DE CASTRO': {
+    nome: 'EDF. DOMINGOS DE CASTRO',
     comercial: 'PAULO LUCATELLI',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF. COND CONDADO COLONIAL': {
-    nome: 'CONDOMINIO EDF. COND CONDADO COLONIAL',
+  'EDF. CONDADO COLONIAL': {
+    nome: 'EDF. CONDADO COLONIAL',
     comercial: 'PAULO LUCATELLI',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF ALDEIA COLONIAL': {
-    nome: 'CONDOMINIO EDF ALDEIA COLONIAL',
+  'EDF. ALDEIA COLONIAL': {
+    nome: 'EDF. ALDEIA COLONIAL',
     comercial: 'PAULO LUCATELLI',
     tipo: 'externo'
   },
-  'CONDOMINIO EDF. ALIANÇA COLONIAL': {
-    nome: 'CONDOMINIO EDF. ALIANÇA COLONIAL',
+  'EDF. ALIANÇA COLONIAL': {
+    nome: 'EDF. ALIANÇA COLONIAL',
     comercial: 'PAULO LUCATELLI',
     tipo: 'externo'
   },
-  'CONDOMINIO EDIF PARQUE DAS ACACIAS': {
-    nome: 'CONDOMINIO EDIF PARQUE DAS ACACIAS',
+  'EDF. PARQUE DAS ACACIAS': {
+    nome: 'EDF. PARQUE DAS ACACIAS',
     comercial: 'PAULO LUCATELLI',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO MAIRIPORA VILLAGE': {
-    nome: 'CONDOMINIO DO EDIFICIO MAIRIPORA VILLAGE',
+  'EDF. MAIRIPORA VILLAGE': {
+    nome: 'EDF. MAIRIPORA VILLAGE',
     comercial: 'RAFAEL GOUVEIA',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO DOM MOURA': {
-    nome: 'CONDOMINIO DO EDIFICIO DOM MOURA',
+  'EDF. DOM MOURA': {
+    nome: 'EDF. DOM MOURA',
     comercial: 'RODRIGO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO COSTA REGO': {
-    nome: 'CONDOMINIO DO EDIFICIO COSTA REGO',
+  'EDF. COSTA REGO': {
+    nome: 'EDF. COSTA REGO',
     comercial: 'SILMAR',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO ARACOYARA VILLAGE': {
-    nome: 'CONDOMINIO DO EDIFICIO ARACOYARA VILLAGE',
+  'EDF. ARACOYARA VILLAGE': {
+    nome: 'EDF. ARACOYARA VILLAGE',
     comercial: 'SR ANTONIO',
     tipo: 'externo'
   },
-  'CONDOMINIO DO EDIFICIO ARQUIPELAGO DOS ACORES': {
-    nome: 'CONDOMINIO DO EDIFICIO ARQUIPELAGO DOS ACORES',
+  'EDF. ARQUIPELAGO DOS ACORES': {
+    nome: 'EDF. ARQUIPELAGO DOS ACORES',
     comercial: 'TR DIRETORIA',
     tipo: 'interno'
   },
-  'CONDOMINIO DO EDIFICIO JARDIM BEIRA RIO': {
-    nome: 'CONDOMINIO DO EDIFICIO JARDIM BEIRA RIO',
+  'EDF. JARDIM BEIRA RIO': {
+    nome: 'EDF. JARDIM BEIRA RIO',
     comercial: 'TR DIRETORIA',
     tipo: 'interno'
   }
@@ -396,33 +396,33 @@ const condominiosInfo: Record<string, CondominioInfo> = {
 
 // Mapeamento das associações
 const associacoesInfo: Record<string, CondominioInfo> = {
-  'Sindicado dos Servidores Municipais de Olinda - SISMO': {
-    nome: 'Sindicado dos Servidores Municipais de Olinda - SISMO',
+  'SISMO - Servidores Municipais de Olinda': {
+    nome: 'SISMO - Servidores Municipais de Olinda',
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  'Associação Pernambucana dos Cabos e Soldados PM/BM - ACS': {
-    nome: 'Associação Pernambucana dos Cabos e Soldados PM/BM - ACS',
+  'ACS - Cabos e Soldados PM/BM': {
+    nome: 'ACS - Cabos e Soldados PM/BM',
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  'Associação dos Servidores Municipais da Prefeitura do Recife - Aspcre': {
-    nome: 'Associação dos Servidores Municipais da Prefeitura do Recife - Aspcre',
+  'ASPCRE - Servidores Municipais do Recife': {
+    nome: 'ASPCRE - Servidores Municipais do Recife',
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  'Sindicato dos Guardas Municipais do Recife - Sindiguardas': {
-    nome: 'Sindicato dos Guardas Municipais do Recife - Sindiguardas',
+  'SINDIGUARDAS - Guardas Municipais do Recife': {
+    nome: 'SINDIGUARDAS - Guardas Municipais do Recife',
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  'União dos Vereadores do Estado de Pernambuco - UVP': {
-    nome: 'União dos Vereadores do Estado de Pernambuco - UVP',
+  'UVP - Vereadores de Pernambuco': {
+    nome: 'UVP - Vereadores de Pernambuco',
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  'Sindicato dos Servidores do Tribunal de Contas do Estado de Pernambuco - Sindicontas': {
-    nome: 'Sindicato dos Servidores do Tribunal de Contas do Estado de Pernambuco - Sindicontas',
+  'SINDICONTAS - Servidores do TCE-PE': {
+    nome: 'SINDICONTAS - Servidores do TCE-PE',
     comercial: 'JULIO',
     tipo: 'interno'
   }
