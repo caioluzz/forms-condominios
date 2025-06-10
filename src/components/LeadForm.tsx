@@ -441,7 +441,7 @@ const associacoesInfo: Record<string, CondominioInfo> = {
 };
 
 // Lista de condomínios e associações para o select
-const condominios = Object.keys(condominiosInfo);
+const condominios = Object.keys(condominiosInfo).sort((a, b) => a.localeCompare(b, 'pt-BR'));
 const associacoes = Object.keys(associacoesInfo);
 
 const formSchema = (showCondominio: boolean, isAssociacao: boolean) => z.object({
