@@ -403,6 +403,11 @@ const condominiosInfo: Record<string, CondominioInfo> = {
     nome: 'EDF. IPUTINGA RESIDENCE',
     comercial: 'Silmar',
     tipo: 'externo'
+  },
+  'EDF. ARRAIAL DE CASA FORTE': {
+    nome: 'EDF. ARRAIAL DE CASA FORTE',
+    comercial: 'Gustavo',
+    tipo: 'interno'
   }
 };
 
