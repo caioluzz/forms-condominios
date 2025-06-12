@@ -22,7 +22,7 @@ export const DynamicSelect: React.FC<DynamicSelectProps> = ({ label, name, optio
 
   return (
     <div className="space-y-2 md:space-y-3">
-      <Label htmlFor={name} className="flex items-center text-sm md:text-base font-medium text-gray-700">
+      <Label htmlFor={name} className="flex items-center text-base md:text-lg font-medium text-gray-700">
         <Building className="w-4 h-4 mr-2 text-trenergia-blue" />
         {label}
       </Label>
@@ -30,19 +30,19 @@ export const DynamicSelect: React.FC<DynamicSelectProps> = ({ label, name, optio
         onValueChange={(value) => setValue(name, value)}
         value={watch(name)}
       >
-        <SelectTrigger className="w-full h-11 md:h-12">
+        <SelectTrigger className="w-full h-9 md:h-10 text-sm md:text-base rounded-md border border-gray-300 px-3 placeholder:text-muted-foreground">
           <SelectValue placeholder={placeholder} />
         </SelectTrigger>
         <SelectContent>
           {options.map((item) => (
-            <SelectItem key={item} value={item}>
+            <SelectItem key={item} value={item} className="text-sm md:text-base">
               {item}
             </SelectItem>
           ))}
         </SelectContent>
       </Select>
       {errors[name] && (
-        <p className="text-sm text-red-500 animate-slide-up">
+        <p className="text-[11px] md:text-xs text-red-500 animate-slide-up">
           {errors[name]?.message?.toString()}
         </p>
       )}

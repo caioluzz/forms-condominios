@@ -18,10 +18,10 @@ const FormHeader: React.FC<FormHeaderProps> = ({ config }) => {
           TR Energia
         </span>
       </div>
-      <h1 className={`${isMobile ? 'text-2xl' : 'text-3xl'} font-bold text-gray-800 mb-4 leading-tight`}>
+      <h1 className="text-xl md:text-2xl font-bold text-gray-800 mb-4 leading-tight">
         {config.title}
       </h1>
-      <p className="text-gray-600 text-balance text-base md:text-lg max-w-2xl mx-auto">
+      <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto">
         {config.description}
       </p>
     </div>

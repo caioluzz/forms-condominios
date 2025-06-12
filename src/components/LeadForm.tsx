@@ -19,7 +19,7 @@ const formSchema = z.object({
   email: z.string().email('Email inválido'),
   phone: z.string().min(1, 'Telefone é obrigatório'),
   option: z.string().optional(),
-  consumo: z.string().optional(),
+  consumo: z.string().min(1, 'Consumo é obrigatório'),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -44,7 +44,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#b6d0f7] to-[#60a5fa] pt-8 pb-8 md:pt-16 md:pb-16">
-      <div className="max-w-xl w-full bg-white rounded-2xl shadow-xl p-6 md:p-10 animate-fade-in">
+      <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-4 md:p-8 animate-fade-in mx-2">
         <FormHeader config={config} />
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">

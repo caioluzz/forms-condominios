@@ -35,18 +35,18 @@ export const FormField: React.FC<FormFieldProps> = ({
           type={type}
           id={name}
           placeholder={placeholder}
-          className={`${icon ? 'pl-10' : ''} h-11 md:h-12 text-base md:text-lg`}
+          className={`${icon ? 'pl-10' : ''} h-9 md:h-10 text-sm md:text-base rounded-md border border-gray-300 px-3`}
           {...register(name)}
           onChange={onChange}
         />
       </div>
       {errors[name] && (
-        <p className="text-sm text-red-500 animate-slide-up">
+        <p className="text-[11px] md:text-xs text-red-500 animate-slide-up">
           {errors[name]?.message?.toString()}
         </p>
       )}
       {helperText && (
-        <p className="text-sm text-gray-500">
+        <p className="text-[11px] md:text-xs text-gray-500">
           {helperText}
         </p>
       )}
