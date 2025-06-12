@@ -39,7 +39,6 @@ const Index = () => {
           } ${loaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
           }`}
       >
-        <LeadForm showCondominio={showCondominio} isAssociacao={isAssociacao} />
       </div>
     </div>
   );

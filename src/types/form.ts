@@ -3,4 +3,11 @@ export interface FormValues {
   email: string;
   phone: string;
   option?: string;
+  consumo?: string;
+}
+
+export interface CondominioInfo {
+  nome: string;
+  comercial: string;
+  tipo: string;
 } 

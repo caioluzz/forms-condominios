@@ -1,3 +1,5 @@
+import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
+
 export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar';
 
 export interface FormConfig {
@@ -30,10 +32,7 @@ export const formConfigs: Record<FormType, FormConfig> = {
     options: {
       label: "Condomínio",
       placeholder: "Selecione um condomínio...",
-      items: [
-        { value: 'condominio1', label: 'Condomínio 1' },
-        { value: 'condominio2', label: 'Condomínio 2' },
-      ],
+      items: Object.keys(condominiosInfo).map(key => ({ value: key, label: condominiosInfo[key].nome })),
     },
   },
   associacao: {
@@ -44,10 +43,7 @@ export const formConfigs: Record<FormType, FormConfig> = {
     options: {
       label: "Associação",
       placeholder: "Selecione uma associação...",
-      items: [
-        { value: 'associacao1', label: 'Associação 1' },
-        { value: 'associacao2', label: 'Associação 2' },
-      ],
+      items: Object.keys(associacoesInfo).map(key => ({ value: key, label: associacoesInfo[key].nome })),
     },
   },
   circulomilitar: {
@@ -58,10 +54,7 @@ export const formConfigs: Record<FormType, FormConfig> = {
     options: {
       label: "Círculo Militar",
       placeholder: "Selecione um círculo militar...",
-      items: [
-        { value: 'circulo1', label: 'Círculo Militar 1' },
-        { value: 'circulo2', label: 'Círculo Militar 2' },
-      ],
+      items: Object.keys(circulosMilitaresInfo).map(key => ({ value: key, label: circulosMilitaresInfo[key].nome })),
     },
   }
 }; 

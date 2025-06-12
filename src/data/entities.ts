@@ -11,7 +11,7 @@ export const condominiosInfo: Record<string, CondominioInfo> = {
     comercial: 'AMANDA TR',
     tipo: 'interno'
   },
-  // ... outros condomínios existentes
+
 };
 
 export const associacoesInfo: Record<string, CondominioInfo> = {
@@ -25,17 +25,31 @@ export const associacoesInfo: Record<string, CondominioInfo> = {
     comercial: 'JULIO',
     tipo: 'interno'
   },
-  // ... outras associações existentes
+  'ASPCRE - Servidores Municipais do Recife': {
+    nome: 'ASPCRE - Servidores Municipais do Recife',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'SINDIGUARDAS - Guardas Municipais do Recife': {
+    nome: 'SINDIGUARDAS - Guardas Municipais do Recife',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'UVP - Vereadores de Pernambuco': {
+    nome: 'UVP - Vereadores de Pernambuco',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  },
+  'SINDICONTAS - Servidores do TCE-PE': {
+    nome: 'SINDICONTAS - Servidores do TCE-PE',
+    comercial: 'JULIO',
+    tipo: 'interno'
+  }
 };
 
 export const circulosMilitaresInfo: Record<string, CondominioInfo> = {
   'Círculo Militar de Pernambuco': {
     nome: 'Círculo Militar de Pernambuco',
-    comercial: 'JULIO',
-    tipo: 'interno'
-  },
-  'Círculo Militar do Recife': {
-    nome: 'Círculo Militar do Recife',
     comercial: 'JULIO',
     tipo: 'interno'
   }
