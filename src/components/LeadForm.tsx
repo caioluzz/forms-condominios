@@ -43,7 +43,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
   };
 
   return (
-    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#b6d0f7] to-[#60a5fa] pt-8 pb-8 md:pt-16 md:pb-16">
+    <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e0f2fe] to-[#bfdbfe] pt-8 pb-8 md:pt-16 md:pb-16">
       <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-4 md:p-8 animate-fade-in mx-2">
         <FormHeader config={config} />
         <FormProvider {...form}>
