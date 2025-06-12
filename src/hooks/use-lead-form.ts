@@ -2,21 +2,73 @@ import { useState } from 'react';
 import { toast } from 'sonner';
 import { FormValues } from '@/types/form';
 
+// Helper function to format phone number (outside the hook to avoid re-creation on every render)
+const formatPhoneNumber = (phone: string): string => {
+  const digitsOnly = phone.replace(/\D/g, '');
+  if (digitsOnly.length === 11) {
+    return `55${digitsOnly.substring(0, 2)}${digitsOnly.substring(2, 7)}${digitsOnly.substring(7, 11)}`;
+  }
+  if (digitsOnly.length === 10) {
+    return `55${digitsOnly.substring(0, 2)}${digitsOnly.substring(2, 6)}${digitsOnly.substring(6, 10)}`;
+  }
+  return phone;
+};
+
 export const useLeadForm = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (data: FormValues, type: string) => {
     try {
       setIsLoading(true);
+
+      const formData = new FormData();
+
+      // Append all original form fields to FormData
+      Object.entries(data).forEach(([key, value]) => {
+        // Only append if value is not null, undefined, or empty string
+        if (value !== undefined && value !== null && value !== '') {
+          formData.append(key, value as string);
+        }
+      });
+
+      // Add the type of the form
+      formData.append('type', type);
+
+      // --- Logic for phone formatting ---
+      if (data.phone) {
+        formData.append('phone_formatted', formatPhoneNumber(data.phone));
+      }
+
+      // --- Logic for firstName ---
+      const firstName = data.name ? data.name.split(' ')[0] : '';
+      formData.append('firstName', firstName);
+
+      // --- Logic for consumption calculations ---
+      // Certifica-se de que 'consumo' existe e é um número válido antes de calcular
+      if (data.consumo && !isNaN(parseFloat(data.consumo))) {
+        const consumo = parseFloat(data.consumo);
+
+        const valorComDesconto = Math.round(consumo * 0.8);
+        formData.append('valor_com_desconto', valorComDesconto.toString());
+
+        const economiaMensal = Math.round(consumo * 0.2);
+        formData.append('economia_mensal', economiaMensal.toString());
+
+        const economiaAnual = Math.round(economiaMensal * 12);
+        formData.append('economia_1_ano', economiaAnual.toString());
+
+        const economia3Anos = Math.round(economiaMensal * 36);
+        formData.append('economia_3_anos', economia3Anos.toString());
+
+        const economia5Anos = Math.round(economiaMensal * 60);
+        formData.append('economia_5_anos', economia5Anos.toString());
+      }
+
       const response = await fetch(import.meta.env.VITE_WEBHOOK_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...data,
-          type,
-        }),
+        // IMPORTANTE: Não defina 'Content-Type' aqui. O navegador faz isso automaticamente
+        // para FormData, incluindo o 'boundary' correto.
+        body: formData,
       });
 
       if (!response.ok) {
