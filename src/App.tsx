@@ -23,7 +23,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Instagram />} />
             <Route path="/instagram" element={<Instagram />} />
-            <Route path="/condominio" element={<Condominio />} />
+            <Route path="/condominios" element={<Condominio />} />
             <Route path="/associacao" element={<Associacao />} />
             <Route path="/circulomilitar" element={<CirculoMilitar />} />
             <Route path="/agencialean" element={<AgenciaLean />} />
