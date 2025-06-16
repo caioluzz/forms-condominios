@@ -1,6 +1,6 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar';
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean';
 
 export interface FormConfig {
   title: string;
@@ -51,10 +51,11 @@ export const formConfigs: Record<FormType, FormConfig> = {
     description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
     submitText: "Enviar Formulário",
     successMessage: "Obrigado! Em breve entraremos em contato.",
-    options: {
-      label: "Círculo Militar",
-      placeholder: "Selecione um círculo militar...",
-      items: Object.keys(circulosMilitaresInfo).map(key => ({ value: key, label: circulosMilitaresInfo[key].nome })),
-    },
+  },
+  agencialean: {
+    title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+    description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+    submitText: "Enviar Formulário",
+    successMessage: "Obrigado! Em breve entraremos em contato.",
   }
 }; 

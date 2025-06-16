@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { toast } from 'sonner';
 import { FormValues } from '@/types/form';
+import { v4 as uuidv4 } from 'uuid';
 
 // Helper function to format phone number (outside the hook to avoid re-creation on every render)
 const formatPhoneNumber = (phone: string): string => {
@@ -16,6 +17,7 @@ const formatPhoneNumber = (phone: string): string => {
 
 export const useLeadForm = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [submissionId] = useState<string>(uuidv4());
 
   const handleSubmit = async (data: FormValues, type: string) => {
     try {
@@ -64,6 +66,32 @@ export const useLeadForm = () => {
         formData.append('economia_5_anos', economia5Anos.toString());
       }
 
+      // Lógica específica para cada tipo de formulário
+      if (type === 'circulomilitar') {
+        formData.append('origem', 'Círculo Militar de Pernambuco');
+        formData.append('comercial', 'JULIO');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'circulo_militar');
+      }
+
+      if (type === 'agencialean') {
+        formData.append('origem', 'Agência Lean');
+        formData.append('comercial', 'LUIS GENES');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'agencia_lean');
+      }
+
+      // Adiciona submissionId e data de cadastro
+      formData.append('submissionId', submissionId);
+      formData.append('data_cadastro', new Date().toISOString());
+      formData.append('timestamp', new Date().toISOString());
+
+      console.log('Enviando formulário:', {
+        tipo: type,
+        submissionId,
+        data_cadastro: new Date().toISOString()
+      });
+
       const response = await fetch(import.meta.env.VITE_WEBHOOK_URL, {
         method: 'POST',
         // IMPORTANTE: Não defina 'Content-Type' aqui. O navegador faz isso automaticamente
@@ -72,6 +100,11 @@ export const useLeadForm = () => {
       });
 
       if (!response.ok) {
+        console.error('Erro na resposta do servidor:', {
+          status: response.status,
+          statusText: response.statusText,
+          submissionId
+        });
         throw new Error('Erro ao enviar formulário');
       }
 

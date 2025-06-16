@@ -66,7 +66,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 md:space-y-6">
             <div className="space-y-3 md:space-y-4">
-              {config.options && (
+              {config.options && type !== 'circulomilitar' && (
                 <DynamicSelect
                   label={config.options.label}
                   name="option"

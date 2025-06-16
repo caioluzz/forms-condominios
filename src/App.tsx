@@ -7,6 +7,7 @@ import Instagram from './pages/Instagram';
 import Condominio from './pages/Condominio';
 import Associacao from './pages/Associacao';
 import CirculoMilitar from './pages/CirculoMilitar';
+import AgenciaLean from './pages/AgenciaLean';
 import NotFound from './pages/NotFound';
 import { ThemeProvider } from "./contexts/ThemeContext";
 
@@ -25,6 +26,7 @@ const App = () => (
             <Route path="/condominio" element={<Condominio />} />
             <Route path="/associacao" element={<Associacao />} />
             <Route path="/circulomilitar" element={<CirculoMilitar />} />
+            <Route path="/agencialean" element={<AgenciaLean />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
