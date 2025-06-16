@@ -81,7 +81,7 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'agencia_lean');
       }
 
-      if (type === 'agencialean') {
+      if (type === 'instagram') {
         formData.append('origem', 'instagram');
         formData.append('comercial', 'ads');
         formData.append('tipo', 'digital');
