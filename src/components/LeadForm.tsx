@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, FormProvider } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -9,6 +9,7 @@ import { Button } from './ui/button';
 import { useLeadForm } from '../hooks/use-lead-form';
 import { FormConfig, formConfigs } from '@/config/formTypes';
 import { DynamicSelect } from './form/DynamicSelect';
+import SuccessMessage from './SuccessMessage';
 
 interface LeadFormProps {
   type: keyof typeof formConfigs;
@@ -38,9 +39,25 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
     },
   });
 
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const onSubmit = async (data: Required<FormValues>) => {
-    await handleSubmit(data, type);
+    const success = await handleSubmit(data, type);
+    if (success) {
+      setIsSubmitted(true);
+      form.reset();
+    }
   };
+
+  if (isSubmitted) {
+    return (
+      <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e0f2fe] to-[#bfdbfe] pt-8 pb-8 md:pt-16 md:pb-16">
+        <div className="max-w-md w-full bg-white rounded-2xl shadow-xl p-4 md:p-8 animate-fade-in mx-2">
+          <SuccessMessage message={config.successMessage} />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e0f2fe] to-[#bfdbfe] pt-8 pb-8 md:pt-16 md:pb-16">
