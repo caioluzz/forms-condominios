@@ -2,9 +2,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Index from "./pages/Index";
-import NotFound from "./pages/NotFound";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Instagram from './pages/Instagram';
+import Condominio from './pages/Condominio';
+import Associacao from './pages/Associacao';
+import CirculoMilitar from './pages/CirculoMilitar';
+import AgenciaLean from './pages/AgenciaLean';
+import NotFound from './pages/NotFound';
 import { ThemeProvider } from "./contexts/ThemeContext";
 
 const queryClient = new QueryClient();
@@ -15,16 +19,17 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        <BrowserRouter>
+        <Router>
           <Routes>
-            <Route path="/instagram" element={<Index showCondominio={false} />} />
-            <Route path="/condominio" element={<Index showCondominio={true} />} />
-            <Route path="/" element={<Index showCondominio={true} />} />
-            <Route path="/:estabelecimento" element={<Index showCondominio={true} />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/" element={<Instagram />} />
+            <Route path="/instagram" element={<Instagram />} />
+            <Route path="/condominio" element={<Condominio />} />
+            <Route path="/associacao" element={<Associacao />} />
+            <Route path="/circulomilitar" element={<CirculoMilitar />} />
+            <Route path="/agencialean" element={<AgenciaLean />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+        </Router>
       </TooltipProvider>
     </QueryClientProvider>
   </ThemeProvider>

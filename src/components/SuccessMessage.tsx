@@ -2,10 +2,10 @@ import React from 'react';
 import { CheckCircle } from 'lucide-react';
 
 interface SuccessMessageProps {
-  estabelecimento?: string;
+  message?: string;
 }
 
-const SuccessMessage: React.FC<SuccessMessageProps> = ({ estabelecimento }) => {
+const SuccessMessage: React.FC<SuccessMessageProps> = ({ message }) => {
   return (
     <div className="animate-fade-in flex flex-col items-center justify-center py-8">
       <div className="w-16 h-16 mb-4 rounded-full bg-green-100 flex items-center justify-center">
