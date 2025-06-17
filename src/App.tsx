@@ -11,6 +11,7 @@ import AgenciaLean from './pages/AgenciaLean';
 import NotFound from './pages/NotFound';
 import { ThemeProvider } from "./contexts/ThemeContext";
 import ServRecife from "./pages/ServRecife";
+import { ThemeToggle } from "./components/ThemeToggle";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <Router>
+          <ThemeToggle />
           <Routes>
             <Route path="/" element={<Instagram />} />
             <Route path="/instagram" element={<Instagram />} />
