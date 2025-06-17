@@ -48,7 +48,7 @@ export const useLeadForm = () => {
       // --- Logic for consumption calculations ---
       // Certifica-se de que 'consumo' existe e é um número válido antes de calcular
       if (data.consumo && !isNaN(parseFloat(data.consumo))) {
-        const consumo = parseFloat(data.consumo);
+        const consumo = parseFloat(data.consumo.replace(/\s/g, '').replace(',', '.'));
 
         const valorComDesconto = Math.round(consumo * 0.8);
         formData.append('valor_com_desconto', valorComDesconto.toString());
