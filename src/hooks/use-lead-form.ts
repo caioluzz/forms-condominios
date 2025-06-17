@@ -74,6 +74,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'circulo_militar');
       }
 
+      if (type === 'servrecife') {
+        formData.append('origem', 'Servidores do Recife');
+        formData.append('comercial', 'JULIO');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'serv_recife');
+      }
+
       if (type === 'agencialean') {
         formData.append('origem', 'Agência Lean');
         formData.append('comercial', 'LUIS GENES');

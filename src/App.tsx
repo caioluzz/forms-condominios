@@ -10,6 +10,7 @@ import CirculoMilitar from './pages/CirculoMilitar';
 import AgenciaLean from './pages/AgenciaLean';
 import NotFound from './pages/NotFound';
 import { ThemeProvider } from "./contexts/ThemeContext";
+import ServRecife from "./pages/ServRecife";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/associacao" element={<Associacao />} />
             <Route path="/circulomilitar" element={<CirculoMilitar />} />
             <Route path="/agencialean" element={<AgenciaLean />} />
+            <Route path="/servrecife" element={<ServRecife />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
