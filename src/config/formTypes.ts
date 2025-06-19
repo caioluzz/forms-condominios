@@ -1,6 +1,6 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife';
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco';
 
 export interface FormConfig {
   title: string;
@@ -59,6 +59,12 @@ export const formConfigs: Record<FormType, FormConfig> = {
     successMessage: "Obrigado! Em breve entraremos em contato.",
   }, 
   servrecife: {
+    title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+    description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+    submitText: "Enviar Formulário",
+    successMessage: "Obrigado! Em breve entraremos em contato.",
+  }, 
+  alumiaco: {
     title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
     description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
     submitText: "Enviar Formulário",

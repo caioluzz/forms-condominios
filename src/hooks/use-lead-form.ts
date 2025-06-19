@@ -95,6 +95,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'digital');
       }
 
+      if (type === 'alumiaco') {
+        formData.append('origem', 'alumiaco');
+        formData.append('comercial', 'Andre Fausto');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'alumiaco');
+      }
+
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
