@@ -23,8 +23,10 @@ export const DynamicSelect: React.FC<DynamicSelectProps> = ({ label, name, optio
   return (
     <div className="space-y-2 md:space-y-3">
       <Label htmlFor={name} className="text-sm md:text-base font-medium text-gray-700 dark:text-gray-200">
-        <Building className="w-4 h-4 mr-2 text-trenergia-blue" />
-        {label}
+        <span className="flex items-center gap-2">
+          <Building className="w-4 h-4 text-trenergia-blue" />
+          {label}
+        </span>
       </Label>
       <Select
         onValueChange={(value) => setValue(name, value)}
