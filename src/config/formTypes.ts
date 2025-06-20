@@ -32,7 +32,9 @@ export const formConfigs: Record<FormType, FormConfig> = {
     options: {
       label: "Condomínio",
       placeholder: "Selecione um condomínio...",
-      items: Object.keys(condominiosInfo).map(key => ({ value: key, label: condominiosInfo[key].nome })),
+      items: Object.keys(condominiosInfo)
+        .map(key => ({ value: key, label: condominiosInfo[key].nome }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     },
   },
   associacao: {
@@ -43,7 +45,9 @@ export const formConfigs: Record<FormType, FormConfig> = {
     options: {
       label: "Associação",
       placeholder: "Selecione uma associação...",
-      items: Object.keys(associacoesInfo).map(key => ({ value: key, label: associacoesInfo[key].nome })),
+      items: Object.keys(associacoesInfo)
+        .map(key => ({ value: key, label: associacoesInfo[key].nome }))
+        .sort((a, b) => a.label.localeCompare(b.label)),
     },
   },
   circulomilitar: {
