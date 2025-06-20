@@ -380,6 +380,11 @@ export const condominiosInfo: Record<string, CondominioInfo> = {
     nome: 'EDF. ARRAIAL DE CASA FORTE',
     comercial: 'Gustavo',
     tipo: 'interno'
+  },
+  'EDF. SÍTIO DAS MANGUEIRAS': {
+    nome: 'EDF. SÍTIO DAS MANGUEIRAS',
+    comercial: 'Carlos Thiago',
+    tipo: 'externo'
   }
 };
 
