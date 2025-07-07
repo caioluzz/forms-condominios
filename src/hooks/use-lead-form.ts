@@ -36,6 +36,16 @@ export const useLeadForm = () => {
       // Add the type of the form
       formData.append('type', type);
 
+      const formType = formData.get('type');
+
+      let desconto = 0.2;
+
+      if (formType === 'prefeitura_floresta') {
+        desconto = 0.15;
+      };
+
+      formData.append('desconto', (desconto * 100).toString());
+
       // --- Logic for phone formatting ---
       if (data.phone) {
         formData.append('phone_formatted', formatPhoneNumber(data.phone));
@@ -50,20 +60,20 @@ export const useLeadForm = () => {
       if (data.consumo && !isNaN(parseFloat(data.consumo))) {
         const consumo = parseFloat(data.consumo.replace(/\s/g, '').replace(',', '.'));
 
-        const valorComDesconto = Math.round(consumo * 0.8);
-        formData.append('valor_com_desconto', valorComDesconto.toString());
+        const valorComDesconto = Math.round(consumo * (1 - desconto));
+        formData.append('valor_com_desconto', valorComDesconto.toLocaleString('pt-BR'));
 
-        const economiaMensal = Math.round(consumo * 0.2);
-        formData.append('economia_mensal', economiaMensal.toString());
+        const economiaMensal = Math.round(consumo * desconto);
+        formData.append('economia_mensal', economiaMensal.toLocaleString('pt-BR'));
 
         const economiaAnual = Math.round(economiaMensal * 12);
-        formData.append('economia_1_ano', economiaAnual.toString());
+        formData.append('economia_1_ano', economiaAnual.toLocaleString('pt-BR'));
 
         const economia3Anos = Math.round(economiaMensal * 36);
-        formData.append('economia_3_anos', economia3Anos.toString());
+        formData.append('economia_3_anos', economia3Anos.toLocaleString('pt-BR'));
 
         const economia5Anos = Math.round(economiaMensal * 60);
-        formData.append('economia_5_anos', economia5Anos.toString());
+        formData.append('economia_5_anos', economia5Anos.toLocaleString('pt-BR'));
       }
 
       // Lógica específica para cada tipo de formulário
@@ -100,6 +110,13 @@ export const useLeadForm = () => {
         formData.append('comercial', 'Andre Fausto');
         formData.append('tipo', 'interno');
         formData.append('tipo_cliente', 'alumiaco');
+      }
+
+      if (type === 'prefeitura_floresta') {
+        formData.append('origem', 'Prefeitura de Floresta');
+        formData.append('comercial', 'CONSIGFACIL');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'prefeituraFloresta');
       }
 
 

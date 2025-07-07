@@ -1,6 +1,6 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco';
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta';
 
 export interface FormConfig {
   title: string;
@@ -74,4 +74,10 @@ export const formConfigs: Record<FormType, FormConfig> = {
     submitText: "Enviar Formulário",
     successMessage: "Obrigado! Em breve entraremos em contato.",
   }, 
+  prefeitura_floresta: {
+    title: "Cliente TR Energia tem 15% de desconto na conta de energia!",
+    description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+    submitText: "Enviar Formulário",
+    successMessage: "Obrigado! Em breve entraremos em contato.",
+  },
 }; 
