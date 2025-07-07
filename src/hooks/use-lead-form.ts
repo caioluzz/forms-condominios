@@ -61,19 +61,19 @@ export const useLeadForm = () => {
         const consumo = parseFloat(data.consumo.replace(/\s/g, '').replace(',', '.'));
 
         const valorComDesconto = Math.round(consumo * (1 - desconto));
-        formData.append('valor_com_desconto', valorComDesconto.toString());
+        formData.append('valor_com_desconto', valorComDesconto.toLocaleString('pt-BR'));
 
         const economiaMensal = Math.round(consumo * desconto);
-        formData.append('economia_mensal', economiaMensal.toString());
+        formData.append('economia_mensal', economiaMensal.toLocaleString('pt-BR'));
 
         const economiaAnual = Math.round(economiaMensal * 12);
-        formData.append('economia_1_ano', economiaAnual.toString());
+        formData.append('economia_1_ano', economiaAnual.toLocaleString('pt-BR'));
 
         const economia3Anos = Math.round(economiaMensal * 36);
-        formData.append('economia_3_anos', economia3Anos.toString());
+        formData.append('economia_3_anos', economia3Anos.toLocaleString('pt-BR'));
 
         const economia5Anos = Math.round(economiaMensal * 60);
-        formData.append('economia_5_anos', economia5Anos.toString());
+        formData.append('economia_5_anos', economia5Anos.toLocaleString('pt-BR'));
       }
 
       // Lógica específica para cada tipo de formulário
