@@ -13,6 +13,7 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import ServRecife from "./pages/ServRecife";
 import { ThemeToggle } from "./components/ThemeToggle";
 import Alumiaco from "./pages/Alumiaco";
+import Floresta from "./pages/Floresta";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/agencialean" element={<AgenciaLean />} />
             <Route path="/servrecife" element={<ServRecife />} />
             <Route path="/alumiaco" element={<Alumiaco />} />
+            <Route path="/prefeitura-floresta" element={<Floresta />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

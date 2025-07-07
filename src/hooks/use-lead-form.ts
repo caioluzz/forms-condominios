@@ -36,6 +36,16 @@ export const useLeadForm = () => {
       // Add the type of the form
       formData.append('type', type);
 
+      const formType = formData.get('type');
+
+      let desconto = 0.2;
+
+      if (formType === 'prefeitura_floresta') {
+        desconto = 0.15;
+      };
+
+      formData.append('desconto', (desconto * 100).toString());
+
       // --- Logic for phone formatting ---
       if (data.phone) {
         formData.append('phone_formatted', formatPhoneNumber(data.phone));
@@ -50,10 +60,10 @@ export const useLeadForm = () => {
       if (data.consumo && !isNaN(parseFloat(data.consumo))) {
         const consumo = parseFloat(data.consumo.replace(/\s/g, '').replace(',', '.'));
 
-        const valorComDesconto = Math.round(consumo * 0.8);
+        const valorComDesconto = Math.round(consumo * (1 - desconto));
         formData.append('valor_com_desconto', valorComDesconto.toString());
 
-        const economiaMensal = Math.round(consumo * 0.2);
+        const economiaMensal = Math.round(consumo * desconto);
         formData.append('economia_mensal', economiaMensal.toString());
 
         const economiaAnual = Math.round(economiaMensal * 12);
@@ -100,6 +110,13 @@ export const useLeadForm = () => {
         formData.append('comercial', 'Andre Fausto');
         formData.append('tipo', 'interno');
         formData.append('tipo_cliente', 'alumiaco');
+      }
+
+      if (type === 'prefeitura_floresta') {
+        formData.append('origem', 'Prefeitura de Floresta');
+        formData.append('comercial', 'CONSIGFACIL');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'prefeituraFloresta');
       }
 
 
