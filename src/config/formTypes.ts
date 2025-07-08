@@ -75,7 +75,7 @@ export const formConfigs: Record<FormType, FormConfig> = {
     successMessage: "Obrigado! Em breve entraremos em contato.",
   }, 
   prefeitura_floresta: {
-    title: "Cliente TR Energia tem 15% de desconto na conta de energia!",
+    title: "ADERE - Servidor Floresta - PE tem 15% de desconto na conta de energia!",
     description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
     submitText: "Enviar Formulário",
     successMessage: "Obrigado! Em breve entraremos em contato.",
