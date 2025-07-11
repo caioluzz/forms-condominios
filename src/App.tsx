@@ -15,6 +15,7 @@ import { ThemeToggle } from "./components/ThemeToggle";
 import Alumiaco from "./pages/Alumiaco";
 import Floresta from "./pages/Floresta";
 import UVP from "./pages/UVP";
+import OAB from "./pages/OAB";
 
 const queryClient = new QueryClient();
 
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/alumiaco" element={<Alumiaco />} />
             <Route path="/prefeitura-floresta" element={<Floresta />} />
             <Route path="/uvp-pe" element={<UVP />} />
+            <Route path="/oab-pe" element={<OAB />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
