@@ -19,10 +19,12 @@ const formSchema = z.object({
   name: z.string().min(1, 'Nome é obrigatório'),
   email: z.string().email('Email inválido'),
   phone: z.string()
-  .min(1, 'Telefone é obrigatório')
-  .regex(/^\d{2}9\d{8}$/, 'Telefone inválido. Use o formato DDD + 9 + número, ex: 81900000000'),
+    .min(1, 'Telefone é obrigatório')
+    .regex(/^\d{2}9\d{8}$/, 'Telefone inválido. Use o formato DDD + 9 + número, ex: 81900000000'),
   option: z.string().optional(),
-  consumo: z.string().min(1, 'Consumo é obrigatório'),
+  consumo: z.string()
+    .min(1, 'Consumo é obrigatório')
+    .regex(/^\d+$/, 'Digite apenas números no campo consumo'),
 });
 
 type FormValues = z.infer<typeof formSchema>;
