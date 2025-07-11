@@ -121,9 +121,16 @@ export const useLeadForm = () => {
 
       if (type === 'uvp') {
         formData.append('origem', 'UVP');
-        formData.append('comercial', 'Julio/Camara dos ADV');
+        formData.append('comercial', 'Julio/Tadeu');
         formData.append('tipo', 'interno');
         formData.append('tipo_cliente', 'UVP');
+      }
+
+      if (type === 'oab') {
+        formData.append('origem', 'oab');
+        formData.append('comercial', 'Julio/Camara dos ADV');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'oab');
       }
 
 
