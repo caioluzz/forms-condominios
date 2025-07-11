@@ -119,6 +119,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'prefeituraFloresta');
       }
 
+      if (type === 'uvp') {
+        formData.append('origem', 'UVP');
+        formData.append('comercial', 'Julio/Camara dos ADV');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'UVP');
+      }
+
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
