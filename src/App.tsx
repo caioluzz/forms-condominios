@@ -16,6 +16,7 @@ import Alumiaco from "./pages/Alumiaco";
 import Floresta from "./pages/Floresta";
 import UVP from "./pages/UVP";
 import OAB from "./pages/OAB";
+import TRE from "./pages/TRE";
 
 const queryClient = new QueryClient();
 
@@ -39,6 +40,7 @@ const App = () => (
             <Route path="/prefeitura-floresta" element={<Floresta />} />
             <Route path="/uvp-pe" element={<UVP />} />
             <Route path="/oab-pe" element={<OAB />} />
+            <Route path="/tre-pe" element={<TRE />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

@@ -133,6 +133,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'oab');
       }
 
+      if (type === 'tre') {
+        formData.append('origem', 'tre');
+        formData.append('comercial', 'Julio/Camara dos ADV');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'tre');
+      }
+
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
