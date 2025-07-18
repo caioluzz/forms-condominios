@@ -140,6 +140,27 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'tre');
       }
 
+      if (type === 'max_beneficios') {
+        formData.append('origem', 'Max Beneficios');
+        formData.append('comercial', 'ads');
+        formData.append('tipo', 'digital');
+        formData.append('tipo_cliente', 'max_beneficios');
+      }
+
+      if (type === 'flyer_condominios') {
+        formData.append('origem', 'Flyer Condominios');
+        formData.append('comercial', 'ads');
+        formData.append('tipo', 'digital');
+        formData.append('tipo_cliente', 'flyer_condominio');
+      }
+
+      if (type === 'flyer_delivery') {
+        formData.append('origem', 'Flyer delivery');
+        formData.append('comercial', 'ads');
+        formData.append('tipo', 'digital');
+        formData.append('tipo_cliente', 'flyer_delivery')
+      }
+
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
