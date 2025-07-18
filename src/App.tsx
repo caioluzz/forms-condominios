@@ -17,6 +17,9 @@ import Floresta from "./pages/Floresta";
 import UVP from "./pages/UVP";
 import OAB from "./pages/OAB";
 import TRE from "./pages/TRE";
+import FlyerCondominios from "./pages/FlyerCondominios";
+import FlyerDelivery from "./pages/FlyerDelivery";
+import MaxBeneficios from "./pages/MaxBeneficios";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +44,9 @@ const App = () => (
             <Route path="/uvp-pe" element={<UVP />} />
             <Route path="/oab-pe" element={<OAB />} />
             <Route path="/tre-pe" element={<TRE />} />
+            <Route path="/flyer-delivery" element={<FlyerDelivery />} />
+            <Route path="/flyer-condominios" element={<FlyerCondominios />} />
+            <Route path="/max-beneficios" element={<MaxBeneficios />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
