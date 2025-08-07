@@ -161,6 +161,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'flyer_delivery')
       }
 
+      if (type === 'atletas') {
+        formData.append('origem', 'Atletas');
+        formData.append('comercial', 'Luis Genes');
+        formData.append('tipo', 'digital');
+        formData.append('tipo_cliente', 'atletas')
+      }
+
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
