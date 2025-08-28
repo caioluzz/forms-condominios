@@ -1,6 +1,6 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas';
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday';
 
 export interface FormConfig {
   title: string;
@@ -119,6 +119,12 @@ export const formConfigs: Record<FormType, FormConfig> = {
     atletas: {
       title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
       description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    mormaiiday: {
+      title: "Você gasta energia no treino e a gente cuida da energia da sua casa!",
+      description: "Agora que seu voucher está garantido, basta preencher o formulário para ativar 20% de desconto todos meses.",
       submitText: "Enviar Formulário",
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
