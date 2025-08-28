@@ -168,6 +168,12 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'atletas')
       }
 
+      if (type === 'mormaiiday') {
+        formData.append('origem', 'MormaiiDay');
+        formData.append('comercial', 'Luis Genes');
+        formData.append('tipo', 'digital');
+        formData.append('tipo_cliente', 'MormaiiDay')
+      }
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);

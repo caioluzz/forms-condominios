@@ -21,6 +21,7 @@ import FlyerCondominios from "./pages/FlyerCondominios";
 import FlyerDelivery from "./pages/FlyerDelivery";
 import MaxBeneficios from "./pages/MaxBeneficios";
 import Atletas from "./pages/Atletas";
+import MormaiiDay from "./pages/MormaiiDay";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
             <Route path="/flyer-condominios" element={<FlyerCondominios />} />
             <Route path="/max-beneficios" element={<MaxBeneficios />} />
             <Route path="/atletas" element={<Atletas />} />
+            <Route path="/mormaiiday" element={<MormaiiDay />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
