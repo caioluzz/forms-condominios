@@ -124,7 +124,7 @@ export const formConfigs: Record<FormType, FormConfig> = {
     },
     mormaiiday: {
       title: "Você gasta energia no treino e a gente cuida da energia da sua casa!",
-      description: "Agora que seu voucher está garantido, basta preencher o formulário para ativar 20% de desconto todos meses.",
+      description: "Agora que seu voucher está garantido, basta preencher o formulário para ativar 20% de desconto todos os meses.",
       submitText: "Enviar Formulário",
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
