@@ -31,7 +31,7 @@ type FormValues = z.infer<typeof formSchema>;
 
 export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
   const config = formConfigs[type];
-  const { handleSubmit, isLoading } = useLeadForm();
+  const { handleSubmit, isLoading, regenerateSubmissionId } = useLeadForm();
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -53,11 +53,20 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
     }
   };
 
+  const handleBackToForm = () => {
+    setIsSubmitted(false);
+    form.reset();
+    regenerateSubmissionId(); // Regenera novo ID
+  };
+
   if (isSubmitted) {
     return (
       <div className="w-full min-h-screen flex items-center justify-center bg-gradient-to-b from-[#e0f2fe] to-[#bfdbfe] dark:from-gray-900 dark:to-gray-800 pt-8 pb-8 md:pt-16 md:pb-16">
         <div className="max-w-md w-full bg-white dark:bg-gray-900 rounded-2xl shadow-xl p-4 md:p-8 animate-fade-in mx-2">
-          <SuccessMessage message={config.successMessage} />
+          <SuccessMessage 
+            message={config.successMessage} 
+            onBack={handleBackToForm}
+          />
         </div>
       </div>
     );

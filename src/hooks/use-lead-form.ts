@@ -17,7 +17,11 @@ const formatPhoneNumber = (phone: string): string => {
 
 export const useLeadForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [submissionId] = useState<string>(uuidv4());
+  const [submissionId, setSubmissionId] = useState<string>(uuidv4());
+
+  const regenerateSubmissionId = () => {
+    setSubmissionId(uuidv4());
+  };
 
   const handleSubmit = async (data: FormValues, type: string) => {
     try {
@@ -216,5 +220,6 @@ export const useLeadForm = () => {
   return {
     isLoading,
     handleSubmit,
+    regenerateSubmissionId,
   };
 }; 
