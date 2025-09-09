@@ -21,7 +21,7 @@ const formSchema = z.object({
   phone: z.string()
     .min(1, 'Telefone é obrigatório')
     .regex(/^\d{2}9\d{8}$/, 'Telefone inválido. Use o formato DDD + 9 + número, ex: 81900000000'),
-  option: z.string().optional(),
+  origem: z.string().optional(),
   consumo: z.string()
     .min(1, 'Consumo é obrigatório')
     .regex(/^\d+$/, 'Digite apenas números no campo consumo'),
@@ -38,7 +38,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
       name: '',
       email: '',
       phone: '',
-      option: '',
+      origem: '',
       consumo: '',
     },
   });
@@ -82,7 +82,7 @@ export const LeadForm: React.FC<LeadFormProps> = ({ type }) => {
               {config.options && type !== 'circulomilitar' && (
                 <DynamicSelect
                   label={config.options.label}
-                  name="option"
+                  name="origem"
                   options={config.options.items.map(item => item.value)}
                   placeholder={config.options.placeholder}
                 />
