@@ -23,6 +23,7 @@ import MaxBeneficios from "./pages/MaxBeneficios";
 import Atletas from "./pages/Atletas";
 import MormaiiDay from "./pages/MormaiiDay";
 import MatchFit from "./pages/MatchFit";
+import Fesindico from "./pages/Fesindico";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -52,6 +53,7 @@ const App = () => (
             <Route path="/atletas" element={<Atletas />} />
             <Route path="/mormaiiday" element={<MormaiiDay />} />
             <Route path="/matchfit" element={<MatchFit />} />
+            <Route path="/fesindico" element={<Fesindico />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

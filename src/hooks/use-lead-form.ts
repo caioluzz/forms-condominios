@@ -186,6 +186,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'MatchFit')
       }
 
+      if (type === 'fesindico') {
+        formData.append('origem', 'Fesindico');
+        formData.append('comercial', 'Fesindico');
+        formData.append('tipo', 'Fesindico');
+        formData.append('tipo_cliente', 'Fesindico')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
