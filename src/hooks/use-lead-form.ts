@@ -95,6 +95,20 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'serv_recife');
       }
 
+      if (type === 'corpoDeBombeiros') {
+        formData.append('origem', 'Corpo de Bombeiros');
+        formData.append('comercial', 'JULIO');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'corpo_de_bombeiros');
+      }
+
+      if (type === 'policiaMilitar') {
+        formData.append('origem', 'Polícia Militar');
+        formData.append('comercial', 'JULIO');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'policia_militar');
+      }
+
       if (type === 'agencialean') {
         formData.append('origem', 'Agência Lean');
         formData.append('comercial', 'LUIS GENES');
