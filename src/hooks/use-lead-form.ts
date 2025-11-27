@@ -44,7 +44,7 @@ export const useLeadForm = () => {
 
       let desconto = 0.2;
 
-      if (formType === 'prefeitura_floresta') {
+      if (formType === 'prefeitura_floresta' || formType === 'condBaronesaDaFonte') {
         desconto = 0.15;
       };
 
@@ -213,6 +213,13 @@ export const useLeadForm = () => {
         formData.append('comercial', 'Amanda');
         formData.append('tipo', 'acao_outubro_rosa');
         formData.append('tipo_cliente', 'acao_outubro_rosa')
+      }
+
+      if (type === 'condBaronesaDaFonte') {
+        formData.append('origem', 'Condomínio Baronesa da Fonte');
+        formData.append('comercial', 'Carlos Cavalcante');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'condBaronesaDaFonte')
       }
 
       // Adiciona submissionId e data de cadastro
