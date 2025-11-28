@@ -222,6 +222,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'condBaronesaDaFonte')
       }
 
+      if (type === 'mcp') {
+        formData.append('origem', 'MCP');
+        formData.append('comercial', 'Luis Genes');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'mcp')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
