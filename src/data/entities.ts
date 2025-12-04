@@ -390,6 +390,16 @@ export const condominiosInfo: Record<string, CondominioInfo> = {
     nome: 'COND. EDF. SAINT SEBASTIAN',
     comercial: 'Amanda',
     tipo: 'interno'
+  },
+  'COND. IMPERIAL PARK': {
+    nome: 'COND. IMPERIAL PARK',
+    comercial: 'Amanda',
+    tipo: 'interno'
+  },
+  'COND. EDF. ANA OLIVEIRA': {
+    nome: 'COND. EDF. ANA OLIVEIRA',
+    comercial: 'Cristiane',
+    tipo: 'interno'
   }
 };
 
