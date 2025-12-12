@@ -229,6 +229,20 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'mcp')
       }
 
+      if (type === 'assembleia_seara') {
+        formData.append('origem', 'Assembleia Seara');
+        formData.append('comercial', 'Janndui');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'assembleia_seara')
+      }
+
+      if (type === 'igreja_adventista') {
+        formData.append('origem', 'Igreja Adventista');
+        formData.append('comercial', 'Jandui');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'igreja_adventista')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

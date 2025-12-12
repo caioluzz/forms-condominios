@@ -29,6 +29,8 @@ import CorpoDeBombeiros from "./pages/CorpoDeBombeiros";
 import PoliciaMilitar from "./pages/PoliciaMilitar";
 import CondBaronesaDaFonte from "./pages/condBaronesaDaFonte";
 import MCP from "./pages/MCP";
+import AssembleiaSeara from "./pages/AssembleiaSeara";
+import IgrejaAdventista from "./pages/IgrejaAdventista";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -64,6 +66,8 @@ const App = () => (
             <Route path="/corpo-de-bombeiros" element={<CorpoDeBombeiros />} />
             <Route path="/cond-baronesa-da-fonte" element={<CondBaronesaDaFonte />} />
             <Route path="/mcp" element={<MCP />} />
+            <Route path="/assembleia-seara" element={<AssembleiaSeara />} />
+            <Route path="/igreja-adventista" element={<IgrejaAdventista />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
