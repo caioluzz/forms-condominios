@@ -243,6 +243,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'igreja_adventista')
       }
 
+      if (type === 'azure') {
+        formData.append('origem', 'Azure');
+        formData.append('comercial', 'Luis Genes');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'azure')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

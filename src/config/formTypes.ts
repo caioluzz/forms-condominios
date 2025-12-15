@@ -1,6 +1,6 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday' | 'matchfit' | 'fesindico' | 'outubrorosa' | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" | "igreja_adventista";
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday' | 'matchfit' | 'fesindico' | 'outubrorosa' | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" | "igreja_adventista" | "azure";
 
 export interface FormConfig {
   title: string;
@@ -177,6 +177,12 @@ export const formConfigs: Record<FormType, FormConfig> = {
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
     igreja_adventista: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    azure: {
       title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
       description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
       submitText: "Enviar Formulário",
