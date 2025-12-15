@@ -31,6 +31,7 @@ import CondBaronesaDaFonte from "./pages/condBaronesaDaFonte";
 import MCP from "./pages/MCP";
 import AssembleiaSeara from "./pages/AssembleiaSeara";
 import IgrejaAdventista from "./pages/IgrejaAdventista";
+import Azure from "./pages/Azure";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -68,6 +69,7 @@ const App = () => (
             <Route path="/mcp" element={<MCP />} />
             <Route path="/assembleia-seara" element={<AssembleiaSeara />} />
             <Route path="/igreja-adventista" element={<IgrejaAdventista />} />
+            <Route path="/azure" element={<Azure />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
