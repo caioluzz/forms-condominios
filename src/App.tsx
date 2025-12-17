@@ -67,7 +67,7 @@ const App = () => (
             <Route path="/corpo-de-bombeiros" element={<CorpoDeBombeiros />} />
             <Route path="/cond-baronesa-da-fonte" element={<CondBaronesaDaFonte />} />
             <Route path="/mcp" element={<MCP />} />
-            <Route path="/assembleia-seara" element={<AssembleiaSeara />} />
+            <Route path="/assembleia-de-deus" element={<AssembleiaSeara />} />
             <Route path="/igreja-adventista" element={<IgrejaAdventista />} />
             <Route path="/azure" element={<Azure />} />
             <Route path="*" element={<NotFound />} />
