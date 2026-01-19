@@ -1,6 +1,6 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday' | 'matchfit' | 'fesindico' | 'outubrorosa' | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" | "igreja_adventista" | "azure";
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday' | 'matchfit' | 'fesindico' | 'outubrorosa' | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" | "igreja_adventista" | "azure" | "rei_davi_condominio" | "autoescola_santana" | "cond_jardim_bela_vista";
 
 export interface FormConfig {
   title: string;
@@ -188,4 +188,22 @@ export const formConfigs: Record<FormType, FormConfig> = {
       submitText: "Enviar Formulário",
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
-}; 
+    rei_davi_condominio: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    autoescola_santana: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    cond_jardim_bela_vista: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+  }; 

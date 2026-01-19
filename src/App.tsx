@@ -32,6 +32,9 @@ import MCP from "./pages/MCP";
 import AssembleiaSeara from "./pages/AssembleiaSeara";
 import IgrejaAdventista from "./pages/IgrejaAdventista";
 import Azure from "./pages/Azure";
+import ReiDaviCondominio from "./pages/ReiDavi";
+import AutoescolaSantana from "./pages/AutoescolaSantana";
+import CondJardimBelaVista from "./pages/CondJardimBelaVista";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -70,6 +73,9 @@ const App = () => (
             <Route path="/assembleia-de-deus" element={<AssembleiaSeara />} />
             <Route path="/igreja-adventista" element={<IgrejaAdventista />} />
             <Route path="/azure" element={<Azure />} />
+            <Route path="/rei-davi-condominio" element={<ReiDaviCondominio />} />
+            <Route path="/autoescola-santana" element={<AutoescolaSantana />} />
+            <Route path="/cond-jardim-bela-vista" element={<CondJardimBelaVista />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
