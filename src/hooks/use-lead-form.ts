@@ -250,6 +250,27 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'azure')
       }
 
+      if (type === 'rei_davi_condominio') {
+        formData.append('origem', 'Rei Davi Condominio');
+        formData.append('comercial', 'Luis Varela');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'rei_davi_condominio')
+      }
+
+      if (type === 'autoescola_santana') {
+        formData.append('origem', 'Autoescola Santana');
+        formData.append('comercial', 'Antônio Autoescola');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'autoescola_santana')
+      }
+
+      if (type === 'cond_jardim_bela_vista') {
+        formData.append('origem', 'Condomínio Jardim Bela Vista');
+        formData.append('comercial', 'Eduardo Albuquerque TR');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'cond_jardim_bela_vista')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
