@@ -271,6 +271,27 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'cond_jardim_bela_vista')
       }
 
+      if (type === 'cia_athletica_recife') {
+        formData.append('origem', 'Cia Athletica Recife');
+        formData.append('comercial', 'Julio');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'cia_athletica_recife')
+      }
+
+      if (type === 'edf_praia_de_gamboa') {
+        formData.append('origem', 'EDF Praia de Gamboa');
+        formData.append('comercial', 'Iranildo');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'edf_praia_de_gamboa')
+      }
+
+      if (type === 'cond_praia_da_pipa') {
+        formData.append('origem', 'Condomínio Praia da Pipa');
+        formData.append('comercial', 'Iranildo');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'cond_praia_da_pipa')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

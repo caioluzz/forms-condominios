@@ -1,6 +1,10 @@
 import { condominiosInfo, associacoesInfo, circulosMilitaresInfo } from '../data/entities';
 
-export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' | 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday' | 'matchfit' | 'fesindico' | 'outubrorosa' | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" | "igreja_adventista" | "azure" | "rei_davi_condominio" | "autoescola_santana" | "cond_jardim_bela_vista";
+export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilitar' | 'agencialean' | 'servrecife' | 'alumiaco' | 'prefeitura_floresta' | 'uvp' | 'oab' | 'tre' | 'flyer_condominios' 
+| 'flyer_delivery' | 'max_beneficios' | 'atletas' | 'mormaiiday' | 'matchfit' | 'fesindico' | 'outubrorosa' 
+| 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" 
+| "igreja_adventista" | "azure" | "rei_davi_condominio" | "autoescola_santana" 
+| "cond_jardim_bela_vista" | "cia_athletica_recife" | "edf_praia_de_gamboa" | "cond_praia_da_pipa";
 
 export interface FormConfig {
   title: string;
@@ -201,6 +205,24 @@ export const formConfigs: Record<FormType, FormConfig> = {
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
     cond_jardim_bela_vista: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    cia_athletica_recife: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    edf_praia_de_gamboa: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    cond_praia_da_pipa: {
       title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
       description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
       submitText: "Enviar Formulário",

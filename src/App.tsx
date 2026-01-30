@@ -35,6 +35,9 @@ import Azure from "./pages/Azure";
 import ReiDaviCondominio from "./pages/ReiDavi";
 import AutoescolaSantana from "./pages/AutoescolaSantana";
 import CondJardimBelaVista from "./pages/CondJardimBelaVista";
+import CiaAthleicaRecife from "./pages/CiaAthleicaRecife";
+import EdfPraiaDeGamboa from "./pages/EdfPraiaDeGamboa";
+import CondPraiaDaPipa from "./pages/CondPraiaDaPipa";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -76,6 +79,9 @@ const App = () => (
             <Route path="/rei-davi-condominio" element={<ReiDaviCondominio />} />
             <Route path="/autoescola-santana" element={<AutoescolaSantana />} />
             <Route path="/cond-jardim-bela-vista" element={<CondJardimBelaVista />} />
+            <Route path="/cia-athletica-recife" element={<CiaAthleicaRecife />} />
+            <Route path="/edf-praia-de-gamboa" element={<EdfPraiaDeGamboa />} />
+            <Route path="/cond-praia-da-pipa" element={<CondPraiaDaPipa />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
