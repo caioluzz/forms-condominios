@@ -292,6 +292,34 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'cond_praia_da_pipa')
       }
 
+      if (type === 'socelme') {
+        formData.append('origem', 'Socelme');
+        formData.append('comercial', 'Socelme');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'socelme')
+      } 
+
+      if (type === 'fast_solucoes') {
+        formData.append('origem', 'Fast Solucoes');
+        formData.append('comercial', 'Fast Solucoes');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'fast_solucoes')
+      }
+
+      if (type === 'aspcre') {
+        formData.append('origem', 'Aspcre');
+        formData.append('comercial', 'Aspcre');
+        formData.append('tipo', 'externo');
+        formData.append('tipo_cliente', 'aspcre')
+      }
+
+      if (type === 'edf_ilha_de_capri') {
+        formData.append('origem', 'EDF Ilha de Capri');
+        formData.append('comercial', 'Amanda');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'edf_ilha_de_capri')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

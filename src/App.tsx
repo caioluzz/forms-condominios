@@ -38,6 +38,10 @@ import CondJardimBelaVista from "./pages/CondJardimBelaVista";
 import CiaAthleicaRecife from "./pages/CiaAthleicaRecife";
 import EdfPraiaDeGamboa from "./pages/EdfPraiaDeGamboa";
 import CondPraiaDaPipa from "./pages/CondPraiaDaPipa";
+import Socelme from "./pages/Socelme";
+import FastSolucoes from "./pages/FastSolucoes";
+import Aspcre from "./pages/Aspcre";
+import EdfIlhaDeCapri from "./pages/EdfIlhaDeCapri";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -82,6 +86,10 @@ const App = () => (
             <Route path="/cia-athletica-recife" element={<CiaAthleicaRecife />} />
             <Route path="/edf-praia-de-gamboa" element={<EdfPraiaDeGamboa />} />
             <Route path="/cond-praia-da-pipa" element={<CondPraiaDaPipa />} />
+            <Route path="/socelme" element={<Socelme />} />
+            <Route path="/fast-solucoes" element={<FastSolucoes />} />
+            <Route path="/aspcre" element={<Aspcre />} />
+            <Route path="/edf-ilha-de-capri" element={<EdfIlhaDeCapri />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
