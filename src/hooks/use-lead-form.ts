@@ -320,6 +320,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'edf_ilha_de_capri')
       }
 
+      if (type === 'ASSORRP') {
+        formData.append('origem', 'ASSORRP');
+        formData.append('comercial', 'ASSORRP');
+        formData.append('tipo', 'interno');
+        formData.append('tipo_cliente', 'ASSORRP')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
