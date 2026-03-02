@@ -1,8 +1,8 @@
 import React from 'react';
 import LeadForm from '@/components/LeadForm';
 
-const AgenciaLean: React.FC = () => {
+const LojaGota: React.FC = () => {
   return <LeadForm type="loja_gota" />;
 };
 
-export default AgenciaLean; 
+export default LojaGota; 

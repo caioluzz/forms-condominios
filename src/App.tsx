@@ -45,6 +45,16 @@ import EdfIlhaDeCapri from "./pages/EdfIlhaDeCapri";
 import ASSORRP from "./pages/ASSORRP";
 import EdfIuca from "./pages/EdiIuca";
 import LojaGota from "./pages/LojaGota";
+import EdfFransciscoPaula from "./pages/EdfFranciscodePaula";
+import LaFuria from "./pages/LaFuria";
+import Sismo from "./pages/Sismo";
+import ACS from "./pages/ACS";
+import Sindguardas from "./pages/Sindguardas";
+import Sintro from "./pages/Sintro";
+import Sinpromg from "./pages/Sinpromg";
+import Sindprov from "./pages/Sindprov";
+
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -96,6 +106,14 @@ const App = () => (
             <Route path="/assorrp" element={<ASSORRP />} />
             <Route path="/edf-iuca" element={<EdfIuca />} />
             <Route path="/loja-gota" element={<LojaGota />} />
+            <Route path="/edf-francisco-paula" element={<EdfFransciscoPaula />} />
+            <Route path="/la-furia" element={<LaFuria />} />
+            <Route path="/sismo" element={<Sismo />} /> 
+            <Route path="/acs" element={<ACS />} />
+            <Route path="/sindguardas" element={<Sindguardas />} />
+            <Route path="/sintro" element={<Sintro />} />
+            <Route path="/sinpromg" element={<Sinpromg />} />
+            <Route path="/sindprov" element={<Sindprov />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
