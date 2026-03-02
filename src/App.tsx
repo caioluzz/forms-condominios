@@ -43,6 +43,7 @@ import FastSolucoes from "./pages/FastSolucoes";
 import Aspcre from "./pages/Aspcre";
 import EdfIlhaDeCapri from "./pages/EdfIlhaDeCapri";
 import ASSORRP from "./pages/ASSORRP";
+import EdfIuca from "./pages/EdiIuca";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -92,6 +93,7 @@ const App = () => (
             <Route path="/aspcre" element={<Aspcre />} />
             <Route path="/edf-ilha-de-capri" element={<EdfIlhaDeCapri />} />
             <Route path="/assorrp" element={<ASSORRP />} />
+            <Route path="/edf-iuca" element={<EdfIuca />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

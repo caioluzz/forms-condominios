@@ -327,6 +327,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'ASSORRP')
       }
 
+      if (type === 'edf_iuca') {
+        formData.append('origem', 'EDF Iuca');
+        formData.append('comercial', 'EDF Iuca');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'edf_iuca')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
