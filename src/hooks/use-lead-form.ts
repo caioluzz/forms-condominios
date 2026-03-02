@@ -341,6 +341,62 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'loja_gota')
       }
 
+      if (type === 'edf_francisco_paula') {
+        formData.append('origem', 'EDF Francisco Paula');
+        formData.append('comercial', 'EDF Francisco Paula');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'edf_francisco_paula')
+      }
+
+      if (type === 'la_furia') {
+        formData.append('origem', 'La Furia');
+        formData.append('comercial', 'La Furia');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'la_furia')
+      }
+
+      if (type === 'sismo') {
+        formData.append('origem', 'Sismo');
+        formData.append('comercial', 'Sismo');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'sismo')
+      }
+
+      if (type === 'acs') {
+        formData.append('origem', 'ACS');
+        formData.append('comercial', 'ACS');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'acs')
+      }
+
+      if (type === 'sindguardas') {
+        formData.append('origem', 'Sindguardas');
+        formData.append('comercial', 'Sindguardas');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'sindguardas')
+      }
+
+      if (type === 'sintro') {
+        formData.append('origem', 'Sintro');
+        formData.append('comercial', 'Sintro');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'sintro')
+      }
+
+      if (type === 'sinpromg') {
+        formData.append('origem', 'Sinpromg');
+        formData.append('comercial', 'Sinpromg');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'sinpromg')
+      }
+
+      if (type === 'sindprov') {
+        formData.append('origem', 'Sindprov');
+        formData.append('comercial', 'Sindprov');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'sindprov')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
