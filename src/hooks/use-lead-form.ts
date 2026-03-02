@@ -334,6 +334,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'edf_iuca')
       }
 
+      if (type === 'loja_gota') {
+        formData.append('origem', 'Loja Gota');
+        formData.append('comercial', 'Loja Gota');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'loja_gota')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

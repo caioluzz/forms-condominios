@@ -44,6 +44,7 @@ import Aspcre from "./pages/Aspcre";
 import EdfIlhaDeCapri from "./pages/EdfIlhaDeCapri";
 import ASSORRP from "./pages/ASSORRP";
 import EdfIuca from "./pages/EdiIuca";
+import LojaGota from "./pages/LojaGota";
 const queryClient = new QueryClient();
 
 const App = () => (
