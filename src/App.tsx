@@ -95,6 +95,7 @@ const App = () => (
             <Route path="/edf-ilha-de-capri" element={<EdfIlhaDeCapri />} />
             <Route path="/assorrp" element={<ASSORRP />} />
             <Route path="/edf-iuca" element={<EdfIuca />} />
+            <Route path="/loja-gota" element={<LojaGota />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
