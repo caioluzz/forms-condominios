@@ -53,6 +53,8 @@ import Sindguardas from "./pages/Sindguardas";
 import Sintro from "./pages/Sintro";
 import Sinpromg from "./pages/Sinpromg";
 import Sindprov from "./pages/Sindprov";
+import CondEdfSoleMar from "./pages/CondEdfSoleMar";
+
 
 
 const queryClient = new QueryClient();
@@ -114,6 +116,7 @@ const App = () => (
             <Route path="/sintro" element={<Sintro />} />
             <Route path="/sinpromg" element={<Sinpromg />} />
             <Route path="/sindprov" element={<Sindprov />} />
+            <Route path="/cond-edf-sol-mar" element={<CondEdfSoleMar />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
