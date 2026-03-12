@@ -411,6 +411,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'rede_hiperbom_clientes')
       }
 
+      if (type === 'rede_hiperbom_colaboradores') {
+        formData.append('origem', 'Rede Hiperbom Colaboradores');
+        formData.append('comercial', 'Rede Hiperbom Colaboradores');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'rede_hiperbom_colaboradores')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
