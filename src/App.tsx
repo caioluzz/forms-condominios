@@ -54,6 +54,7 @@ import Sintro from "./pages/Sintro";
 import Sinpromg from "./pages/Sinpromg";
 import Sindprov from "./pages/Sindprov";
 import CondEdfSoleMar from "./pages/CondEdfSoleMar";
+import RedeHiperbomClientes from "./pages/RedeHiperbomClientes";
 
 
 
@@ -117,6 +118,7 @@ const App = () => (
             <Route path="/sinpromg" element={<Sinpromg />} />
             <Route path="/sindprov" element={<Sindprov />} />
             <Route path="/cond-edf-sol-mar" element={<CondEdfSoleMar />} />
+            <Route path="/rede-hiperbom-clientes" element={<RedeHiperbomClientes />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>

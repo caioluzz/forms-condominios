@@ -397,6 +397,20 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'sindprov')
       }
 
+      if (type === 'cond_edf_sol_mar') {
+        formData.append('origem', 'Condomínio EDF Sol e Mar');
+        formData.append('comercial', 'Condomínio EDF Sol e Mar');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'cond_edf_sol_mar')
+      }
+
+      if (type === 'rede_hiperbom_clientes') {
+        formData.append('origem', 'Rede Hiperbom Clientes');
+        formData.append('comercial', 'Rede Hiperbom Clientes');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'rede_hiperbom_clientes')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

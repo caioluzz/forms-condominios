@@ -5,7 +5,7 @@ export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilit
 | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" 
 | "igreja_adventista" | "azure" | "rei_davi_condominio" | "autoescola_santana" 
 | "cond_jardim_bela_vista" | "cia_athletica_recife" | "edf_praia_de_gamboa" | "cond_praia_da_pipa" | "socelme"
-| "fast_solucoes" | "aspcre" | "edf_ilha_de_capri" | "ASSORRP" | "edf_iuca" | "loja_gota" | "edf_francisco_paula" | "la_furia" | "sismo" |"acs" | "sindguardas" | "sintro" | "sinpromg" | "sindprov" | "cond_edf_sol_mar" ;
+| "fast_solucoes" | "aspcre" | "edf_ilha_de_capri" | "ASSORRP" | "edf_iuca" | "loja_gota" | "edf_francisco_paula" | "la_furia" | "sismo" |"acs" | "sindguardas" | "sintro" | "sinpromg" | "sindprov" | "cond_edf_sol_mar" | "rede_hiperbom_clientes"; ;
 
 export interface FormConfig {
   title: string;
@@ -320,6 +320,12 @@ export const formConfigs: Record<FormType, FormConfig> = {
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
     cond_edf_sol_mar: {
+      title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    rede_hiperbom_clientes: {
       title: "Cliente TR Energia tem até 20% de desconto na conta de energia!",
       description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
       submitText: "Enviar Formulário",
