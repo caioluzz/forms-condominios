@@ -417,6 +417,13 @@ export const useLeadForm = () => {
         formData.append('tipo', 'Interno');
         formData.append('tipo_cliente', 'rede_hiperbom_colaboradores')
       }
+      
+      if (type === 'cond_ava_gardner') {
+        formData.append('origem', 'Condomínio Ava Gardner');
+        formData.append('comercial', 'Condomínio Ava Gardner');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'cond_ava_gardner')
+      }
 
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
