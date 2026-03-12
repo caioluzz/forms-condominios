@@ -326,7 +326,7 @@ export const formConfigs: Record<FormType, FormConfig> = {
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
     rede_hiperbom_clientes: {
-      title: "Cliente da RedeHiperbom tem até 20% de desconto na conta de energia!",
+      title: "Clientes da Rede Hiperbom têm até 20% de desconto na conta de energia!",
       description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
       submitText: "Enviar Formulário",
       successMessage: "Obrigado! Em breve entraremos em contato.",
