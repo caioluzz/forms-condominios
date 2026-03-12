@@ -56,6 +56,7 @@ import Sindprov from "./pages/Sindprov";
 import CondEdfSoleMar from "./pages/CondEdfSoleMar";
 import RedeHiperbomClientes from "./pages/RedeHiperbomClientes";
 import RedeHiperbomColaboradores from "./pages/RedeHiperbomColaboradores";
+import CondAvaGardner from "./pages/CondAvaGardner";
 
 
 
@@ -122,6 +123,7 @@ const App = () => (
             <Route path="/cond-edf-sol-mar" element={<CondEdfSoleMar />} />
             <Route path="/rede-hiperbom-clientes" element={<RedeHiperbomClientes />} />
             <Route path="/rede-hiperbom-colaboradores" element={<RedeHiperbomColaboradores />} />
+            <Route path="/cond-ava-gardner-sophie-loren" element={<CondAvaGardner />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
