@@ -425,6 +425,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'cond_ava_gardner')
       }
 
+      if (type === 'aspra') {
+        formData.append('origem', 'ASPRA');
+        formData.append('comercial', 'ASPRA');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'aspra')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
