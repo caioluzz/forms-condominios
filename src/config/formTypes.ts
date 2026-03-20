@@ -5,7 +5,7 @@ export type FormType = 'instagram' | 'condominio' | 'associacao' | 'circulomilit
 | 'corpoDeBombeiros' | 'policiaMilitar' | "condBaronesaDaFonte" | "mcp" | "assembleia_seara" 
 | "igreja_adventista" | "azure" | "rei_davi_condominio" | "autoescola_santana" 
 | "cond_jardim_bela_vista" | "cia_athletica_recife" | "edf_praia_de_gamboa" | "cond_praia_da_pipa" | "socelme"
-| "fast_solucoes" | "aspcre" | "edf_ilha_de_capri" | "ASSORRP" | "edf_iuca" | "loja_gota" | "edf_francisco_paula" | "la_furia" | "sismo" |"acs" | "sindguardas" | "sintro" | "sinpromg" | "sindprov" | "cond_edf_sol_mar" | "rede_hiperbom_clientes" | "rede_hiperbom_colaboradores" | "cond_ava_gardner" | "aspra" ;
+| "fast_solucoes" | "aspcre" | "edf_ilha_de_capri" | "ASSORRP" | "edf_iuca" | "loja_gota" | "edf_francisco_paula" | "la_furia" | "sismo" |"acs" | "sindguardas" | "sintro" | "sinpromg" | "sindprov" | "cond_edf_sol_mar" | "rede_hiperbom_clientes" | "rede_hiperbom_colaboradores" | "cond_ava_gardner" | "aspra" | "cia_do_corpo";
 
 export interface FormConfig {
   title: string;
@@ -344,6 +344,12 @@ export const formConfigs: Record<FormType, FormConfig> = {
       successMessage: "Obrigado! Em breve entraremos em contato.",
     },
     aspra: {
+      title: "Clientes TR têm até 20% de desconto na conta de energia!",
+      description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
+      submitText: "Enviar Formulário",
+      successMessage: "Obrigado! Em breve entraremos em contato.",
+    },
+    cia_do_corpo: {
       title: "Clientes TR têm até 20% de desconto na conta de energia!",
       description: "Preencha o formulário abaixo para receber sua proposta personalizada e descobrir como aproveitar esse benefício exclusivo.",
       submitText: "Enviar Formulário",
