@@ -432,6 +432,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'aspra')
       }
 
+      if (type === 'cia_do_corpo') {
+        formData.append('origem', 'Cia do Corpo');
+        formData.append('comercial', 'Cia do Corpo');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'cia_do_corpo')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
