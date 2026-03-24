@@ -439,6 +439,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'cia_do_corpo')
       }
 
+      if (type === 'clinic_pro') {
+        formData.append('origem', 'Clinic Pro');
+        formData.append('comercial', 'Clinic Pro');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'clinica_pro')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());
