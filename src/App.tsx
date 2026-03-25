@@ -59,7 +59,8 @@ import RedeHiperbomColaboradores from "./pages/RedeHiperbomColaboradores";
 import CondAvaGardner from "./pages/CondAvaGardner";
 import ASPRA from "./pages/ASPRA";
 import CiaDoCorpo from "./pages/CiaDoCorpo";
-import ClinicPro from "./pages/ClinicaPro";
+import ClinicPro from "./pages/ClinicPro";
+import Masterclin from "./pages/Masterclin";
 
 
 
@@ -131,6 +132,7 @@ const App = () => (
             <Route path="/aspra" element={<ASPRA />} />
             <Route path="/cia-do-corpo" element={<CiaDoCorpo />} />
             <Route path="/clinic-pro" element={<ClinicPro />} />
+            <Route path="/masterclin" element={<Masterclin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
