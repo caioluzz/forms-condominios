@@ -453,6 +453,13 @@ export const useLeadForm = () => {
         formData.append('tipo_cliente', 'masterclin')
       }
 
+      if (type === 'agiben_beneficios') {
+        formData.append('origem', 'Agiben Benefícios');
+        formData.append('comercial', 'Agiben Benefícios');
+        formData.append('tipo', 'Interno');
+        formData.append('tipo_cliente', 'agiben_beneficios')
+      }
+
       // Adiciona submissionId e data de cadastro
       formData.append('submissionId', submissionId);
       formData.append('data_cadastro', new Date().toISOString());

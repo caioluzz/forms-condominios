@@ -61,6 +61,7 @@ import ASPRA from "./pages/ASPRA";
 import CiaDoCorpo from "./pages/CiaDoCorpo";
 import ClinicPro from "./pages/ClinicPro";
 import Masterclin from "./pages/Masterclin";
+import Agiben from "./pages/Agiben";
 
 
 
@@ -133,6 +134,7 @@ const App = () => (
             <Route path="/cia-do-corpo" element={<CiaDoCorpo />} />
             <Route path="/clinic-pro" element={<ClinicPro />} />
             <Route path="/masterclin" element={<Masterclin />} />
+            <Route path="/agiben-beneficios" element={<Agiben />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Router>
